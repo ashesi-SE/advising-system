@@ -16,3 +16,7 @@ advising-system
 
 ## Wiki
 Here is a link to our wiki page: https://github.com/ashesi-SE/advising-system/wiki
+
+### Cloning the project
+To clone this repository run git clone https://github.com/ashesi-SE/advising-system.git
+To clone this wiki run git clone https://github.com/ashesi-SE/advising-system/wiki.git
