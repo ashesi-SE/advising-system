@@ -10,7 +10,7 @@ Advising-System
 
 ###### Abdul Muhsin Iddris 
 ###### Barbara Selassie Adzudzor 
-###### Kingston Dela Coker 
+###### Kingston Coker 
 ###### Kutorkor Kotey-Afutu 
 ###### Martha Adjoa Ataa Kumi 
 
