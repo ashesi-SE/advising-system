@@ -22,3 +22,6 @@ Advising-System
 
 #### Cloning the wiki
 ###### To clone this wiki run git clone https://github.com/ashesi-SE/advising-system.wiki.git
+
+#### Track our work flow here
+###### https://waffle.io/ashesi-se/advising-system
