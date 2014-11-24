@@ -9,7 +9,7 @@ class login_class extends adb {
    }
 
    function loginAs($user, $pass) {
-      $query = "select count(*) as c from manager where username = '$user' and password = '$pass'";
+      $query = "select count(*) as c from student where username = '$user' and password = '$pass'";
 //        print "quere " . $query;
       $this->query($query);
 
@@ -23,7 +23,7 @@ class login_class extends adb {
    
       function loadUserProfile($username) {
       //load username and other informaiton into the session      
-      $query = "select * from manager where username = '$username';";
+      $query = "select * from student where username = '$username';";
       
       $this->query($query);
 
@@ -31,9 +31,9 @@ class login_class extends adb {
       session_start();
       
       $_SESSION['username'] = $username;
-      $_SESSION['role'] = $result['role_role_id'];
-      $_SESSION['id'] = $result['manager_id'];
-      $_SESSION['team_id'] = $result['team_team_id'];
+//      $_SESSION['role'] = $result['role_role_id'];
+      $_SESSION['id'] = $result['student_id'];
+//      $_SESSION['team_id'] = $result['team_team_id'];
       
       
       return $result;
