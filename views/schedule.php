@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$advisor_id  = $_SESSION['id'];
+?>
 <html>
    <head>
       <meta charset="UTF-8">
@@ -16,7 +20,7 @@
                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>  
                   <span class="icon-bar"></span>
                </button>
                <a class="navbar-brand" href="#">Advisory System</a>
@@ -59,11 +63,15 @@
 
 
             </div>
-            <div id="date_div" class="col-md-9 col-md-offset-3">
+            <div id="date_div" class="col-md-9 col-md-offset-3">   
                <ul class="list-unstyled">
-                  <li><b>Set Meeting Time:</b><input type="date" name="meeting_time" id="datepicker" class="form-control input-sm"></li>
-                  <li class="text-left"><a href="mailto:advisor.name@ashesi.edu.gh" class=" btn btn-default btn-sm"> Send Advisor Message</a></li>
+                  <li><b>Set Meeting Time:</b>
+                      <input type="date" name="meeting_time" id="datepicker" class="form-control input-sm">
+                  </li>
+<!--                  <li class="text-left"><a href="mailto:advisor.name@ashesi.edu.gh" class=" btn btn-default btn-sm"> Send Advisor Message</a></li>-->   
                </ul>
+                <button onclick="check_save_meeting_time(<?php echo $advisor_id?>)">Set meeting time</button>
+                
 
             </div>
          </div>
@@ -80,10 +88,11 @@
 
          </div>
       </div>
-
+      
 
       <script src="../views/js/jquery-1.11.0.js"></script>
       <script src="../views/js/bootstrap.js"></script>
+      <script src="../controllers/korkor.js" type="text/javascript"></script>  
 
    </body>
-</html>
+</html>   
