@@ -47,7 +47,7 @@ function getFormattedDate(date) {
 function setMeetingTime(id, date ) {  
     
     var u = "action_korkor.php?cmd=1&id=" + id + "&date=" + date;
-    prompt("u", u);
+//    prompt("u", u);
     return syncAjax(u);
 //    alert(date);
 }
