@@ -31,7 +31,8 @@ class advisor_class extends adb {
         
     }
     function get_notes_per_session($student_id){
-        $query = "Select * from session where messages inner join session on session.student_has_id=messages.student_has_id where ";
+   $query = "Select * from (student,messages) "
+           . "join session on session.student_has_id=messages.student_has_id and session.student_has_id=student.student_has_id where student.student_id=$student_id";
 //                            print $query;  
         return $this->query($query);  
         
