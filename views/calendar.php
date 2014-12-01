@@ -215,4 +215,4 @@ class Calendar {
     }
      
 }
-- See more at: http://www.startutorial.com/articles/view/how-to-build-a-web-calendar-in-php#sthash.3cizVwad.dpuf
+//- See more at: http://www.startutorial.com/articles/view/how-to-build-a-web-calendar-in-php#sthash.3cizVwad.dpuf
