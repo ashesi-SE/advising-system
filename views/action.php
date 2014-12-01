@@ -190,3 +190,68 @@ function login() {
    echo jsons("message", "error, no record retrieved");
    echo "}";
 }
+function list_advisees(){
+    include_once '../models/advisor_class.php';
+    $list = new advisor_class();
+    $row = $list->all_advisees();
+    $info = $row->fetch();
+    while($row){
+        
+        echo "{";
+        echo jsonn("result", 1).",";
+        echo '"full_name":';
+        echo"{";
+        echo jsons("firstname", $info["first_name"]).",";
+        echo jsons("lastname", $info["last_name"]);
+        echo "}";
+        echo "}";
+        $info = $row->fetch();
+        
+    }return;
+   
+   echo "{";
+   echo jsonn("result", 0) . ",";
+   echo jsons("message", "error, no record retrieved");
+   echo "}";
+    
+    }
+    
+function set_time(){
+    include_once '../models/advisor_class.php';
+    $list = new advisor_class();
+    $date = get_data('date');
+    $id = get_datan('id');
+     $list->set_available_time($id, $date);
+   
+   
+   
+    
+    }
+    function get_sessions(){
+    include_once '../models/advisor_class.php';
+    $note = new advisor_class();
+    $id = get_datan($studentId);
+    $row = $note->get_notes_per_session($id);
+    $info = $row->fetch();
+    while($row){
+        
+        echo "{";
+        echo jsonn("result", 1).",";
+        echo '"full_name":';
+        echo"{";
+        echo jsonn("student_id", $info["student_id"]).",";
+        echo jsons("message", $info["message"]);
+        echo "}";
+        echo "}";
+        $info =$row->fetch();
+    }return;
+   
+   echo "{";
+   echo jsonn("result", 0) . ",";
+   echo jsons("message", "error, no record retrieved");
+   echo "}";
+    
+    }
+    
+    
+
