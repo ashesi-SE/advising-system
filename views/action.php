@@ -191,7 +191,7 @@ function login() {
    echo "}";
 }
 function list_advisees(){
-    include_once '../class/advisor_class.php';
+    include_once '../models/advisor_class.php';
     $list = new advisor_class();
     $row = $list->all_advisees();
     $info = $row->fetch();
@@ -217,7 +217,7 @@ function list_advisees(){
     }
     
 function set_time(){
-    include_once '../class/advisor_class.php';
+    include_once '../models/advisor_class.php';
     $list = new advisor_class();
     $date = get_data('date');
     $id = get_datan('id');
@@ -228,7 +228,7 @@ function set_time(){
     
     }
     function get_sessions(){
-    include_once '../class/advisor_class.php';
+    include_once '../models/advisor_class.php';
     $note = new advisor_class();
     $id = get_datan($studentId);
     $row = $note->get_notes_per_session($id);
