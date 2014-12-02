@@ -192,9 +192,8 @@ function login() {
 }
 function list_advisees(){
     include_once '../models/advisor_class.php';
-    $faculty = get_data("faculty_id");
     $list = new advisor_class();
-    $row = $list->all_advisees($faculty);
+    $row = $list->all_advisees();
     $info = $row->fetch();
     while($row){
         
@@ -240,8 +239,7 @@ function set_time(){
         echo jsonn("result", 1).",";
         echo '"full_name":';
         echo"{";
-        echo jsonn("firstname", $info["first_name"]).",";
-        echo jsonn("lastname", $info["last_name"]).",";
+        echo jsonn("student_id", $info["student_id"]).",";
         echo jsons("message", $info["message"]);
         echo "}";
         echo "}";

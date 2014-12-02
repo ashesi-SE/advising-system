@@ -18,8 +18,8 @@ class advisor_class extends adb {
         adb::adb();
     }
     
-    function all_advisees($faculty_id){
-         $query = "Select * from student_has_advisor inner join  on student_has_advisor.student_id=student.student_id where student_has_advisor.faculty_id=$faculty_id";
+    function all_advisees(){
+         $query = "Select * from student inner join faculty on student.student_has_id=faculty.student_has_id";
 //                            print $query;  
         return $this->query($query);
         
@@ -30,47 +30,11 @@ class advisor_class extends adb {
         return $this->query($query);
         
     }
-    function insert_notes_per_session($student_id){
-   $query = "Inser into  ";
+    function get_notes_per_session($student_id){
+   $query = "Select * from (student,messages) "
+           . "join session on session.student_has_id=messages.student_has_id and session.student_has_id=student.student_has_id where student.student_id=$student_id";
 //                            print $query;  
         return $this->query($query);  
         
     }
-    function send_messages($message,$recipient){
-   $query = "Insert into message(message,recipient) values ($messages,$faculty,$student_id) ";
-//                            print $query;  
-        return $this->query($query);  
-        
-    }
-    function loginAsAdvisor($user,$pass){
-       $query = "select count(*) as c from faculty where username = '$user' and password = '$pass'";
-       $this->query($query);
-       
-        $result = $this->fetch();
-      if ($result['c'] == 1) {
-         return true;
-      } else {
-         return false;
-      }
-       
-       
-   }
-   
-   function loadUserProfile($username) {
-      //load username and other informaiton into the session      
-      $query = "select * from faculty where username = '$username';";
-
-      $this->query($query);
-
-      $result = $this->fetch();
-      session_start();
-
-      $_SESSION['username'] = $username;
-//      $_SESSION['role'] = $result['role_role_id'];
-      $_SESSION['id'] = $result['faculty_id'];
-//      $_SESSION['team_id'] = $result['team_team_id'];
-
-
-      return $result;
-   }
 }
