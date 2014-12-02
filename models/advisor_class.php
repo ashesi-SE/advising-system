@@ -1,10 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+include_once 'adb.php';
 
 /**
  * Description of advisor_class
@@ -37,4 +33,30 @@ class advisor_class extends adb {
       return $this->query($query);
    }
 
+   /**
+    * Get advisees for a particular advisor
+    * @param type $advisor_id
+    */
+   function get_advisees($advisor_id) {
+      $query = "Select * from student_has_advisor left join student on student_has_advisor.student_id = student.student_id where faculty_faculty_id = $advisor_id";
+
+      return $this->query($query);
+   }
+
 }
+
+//$advisor_id = 1;
+//include_once '../models/advisor_class.php';
+//$adv_obj = new advisor_class();
+//if ($adv_obj->get_advisees($advisor_id)) {
+//   $row = $adv_obj->fetch();
+//
+//   while ($row) {
+//
+//      print "<li>" . "<a href='#'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+//      print $row["first_name"] . " " . $row["last_name"];
+//      print"</a>" . "</li>";
+//
+//      $row = $adv_obj->fetch();
+//   }
+//}
