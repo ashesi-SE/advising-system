@@ -39,7 +39,7 @@ $advisor_id = 1;
             <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
          </li>
          <li>
-            <a href="#"><i class="fa fa-fw fa-wrench"></i> Available Times</a>
+            <a href="advisor_home.php"><i class="fa fa-fw fa-wrench"></i> Available Times</a>
          </li>
          <li>
             <a href="#"><i class="fa fa-fw fa-edit"></i> Send Report To HOD</a>
