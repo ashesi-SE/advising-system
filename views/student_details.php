@@ -199,7 +199,10 @@
                      <div class="panel-body">
                         <div class="list-group">
                            <a href="#" class="list-group-item">
-                              <span class="badge">Iddris Mushin Abdulai</span>
+                              <span class="badge"><?php if (isset($_REQUEST['student_name'])) {
+            print $_REQUEST['student_name'];
+         }
+         ?></span>
                               <i class="fa fa-fw fa-calendar"></i> Name
                            </a>
                            <a href="#" class="list-group-item">

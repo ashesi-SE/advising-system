@@ -32,7 +32,7 @@ function login_faculty() {
    var user = document.getElementById("username").value;
    var pass = document.getElementById("password").value;
    var u = "action_advisor.php?cmd=1&user=" + user + "&pass=" + pass;
-   prompt("r.user", u);
+//   prompt("r.user", u);
    r = syncAjax(u);
 //   prompt(r.user);
 
