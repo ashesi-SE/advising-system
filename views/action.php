@@ -31,12 +31,20 @@ switch ($cmd) {
    case 7:
       send_request_to_manager();
       break;
+   
+   case 8:
+      login_facutly();
+      break;
 
    default:
       echo "{";
       echo jsonn("result", 0) . ",";
       echo jsons("message", "unknown command");
       echo "}";
+}
+
+function login_facutly(){
+   include_once '';
 }
 
 function send_request_to_manager() {

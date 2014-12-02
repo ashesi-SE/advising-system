@@ -25,13 +25,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                  <!--<li class="active"><a href="#">Home</a></li>-->
-                  <!--<li><a href="#">Contact</a></li>-->
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Contact</a></li>
 
                </ul>
 
                <ul class="nav navbar-nav navbar-right">
-                  <!--<li><a href="#">Register</a></li>-->
+                  <li><a href="#">Register</a></li>
                   <!--  <li>
                      <a href="#">Login</span></a>
                     
@@ -63,8 +63,7 @@
                         <div class="checkbox">
                            <input type="checkbox">
                            <label>Remember Me</label>
-                           <a href="#"><input type="submit" value="Log in as Student" class="btn btn-default btn-sm" onclick="login()"/></a> 
-                           <a href="#"><input type="button" value="Log in as Faculty" class="btn btn-default btn-sm" onclick="login_faculty()"/></a>
+                           <a href="#"><input type="submit" value="Log in" class="btn btn-default btn-sm" onclick="login()"/></a>
 
                         </div>
                      </div>

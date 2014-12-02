@@ -16,19 +16,18 @@ include("../controllers/gen.php");
 $cmd = get_datan("cmd");
 switch ($cmd) {
    case 1:
-       loginAsAdvisor();
+      loginAsAdvisor();
       break;
 }
 
-
 function loginAsAdvisor() {
-   include_once '../models/advisor_class.php';
+   include_once '../models/login_class.php';
    $user = get_data('user');
    $pass = get_data('pass');
    $p = new login_class();
    $val = $p->loginAsAdvisor($user, $pass);
    if ($val) {
-      $row = $p->loadUserProfile($user);
+      $row = $p->loadAdminProfile($user);
       if ($row) {
          echo "{";
          echo jsonn("result", 1);
@@ -36,7 +35,7 @@ function loginAsAdvisor() {
          echo "{";
          echo jsons("username", $row["username"]) . ",";
 //         print_r($row);
-         echo jsonn("student_id", $row["faculty_id"]);
+         echo jsonn("faculty_id", $row["faculty_id"]);
          echo "}";
          print "}";
       }return;
