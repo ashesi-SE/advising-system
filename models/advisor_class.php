@@ -18,8 +18,8 @@ class advisor_class extends adb {
         adb::adb();
     }
     
-    function all_advisees(){
-         $query = "Select * from student inner join faculty on student.student_has_id=faculty.student_has_id";
+    function all_advisees($faculty_id){
+         $query = "Select * from student_has_advisor inner join  on student_has_advisor.student_id=student.student_id where student_has_advisor.faculty_id=$faculty_id";
 //                            print $query;  
         return $this->query($query);
         
@@ -30,9 +30,14 @@ class advisor_class extends adb {
         return $this->query($query);
         
     }
-    function get_notes_per_session($student_id){
-   $query = "Select * from (student,messages) "
-           . "join session on session.student_has_id=messages.student_has_id and session.student_has_id=student.student_has_id where student.student_id=$student_id";
+    function insert_notes_per_session($student_id){
+   $query = "Inser into ";
+//                            print $query;  
+        return $this->query($query);  
+        
+    }
+    function send_messages($message,$recipient){
+   $query = "Insert into message(message,recipient) values ($messages,$faculty,$student_id) ";
 //                            print $query;  
         return $this->query($query);  
         
