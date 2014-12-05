@@ -31,7 +31,7 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
-
+      <script src="js/del.js" type="text/javascript"></script>
    </head>
 
    <body>
@@ -58,8 +58,6 @@
                            <i class="fa fa-dashboard"></i> Meeting times with advisees
                         </li>
                      </ol>
-
-
                   </div>
                </div>
 
@@ -69,7 +67,7 @@
                      <div class="panel panel-red">
                         <div class="panel-body">
                            <div class="table-responsive">
-                              <button class="btn btn-danger btn-block"> Assign Students To Advisors</button>
+                              <button class="btn btn-danger btn-block" onclick="assign_students()"> Assign Students To Advisors</button>
                            </div>
                            <!--                           <div class="text-right">
                                                          <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>

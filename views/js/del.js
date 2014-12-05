@@ -41,3 +41,29 @@ $(document).ready(function () {
 //              true);
 //   }
 });
+
+function assign_students() {
+   
+   
+   
+   //complete the url
+   var u = "action_del.php?cmd=2&user=" + user + "&pass=" + pass;
+//   prompt("url", u);
+   students = syncAjax(u);
+   
+   
+   
+    var u = "action_del.php?cmd=3&user=" + user + "&pass=" + pass;
+   advisors = syncAjax(u);
+//   prompt(r.user);
+
+//                alert(r.result);
+   if (r.result === 1) { // signifies manager
+      window.open("player_profile.php", "_self");
+   }
+
+   else {
+      alert("username or password wrong");
+      return;
+   }
+}

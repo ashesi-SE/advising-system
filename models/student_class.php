@@ -3,25 +3,19 @@
 include_once 'adb.php';
 
 /**
- * Description of advisor_class
+ * Description of student_class
  *
- * @author maltiti
+ * @author Del
  */
-class advisor_class extends adb {
+class student_class extends adb {
 
    //put your code here
-   function advisor_class() {
+   function student_class() {
       adb::adb();
    }
-   
-   function get_all_advisors(){
-      $query = "Select * from facutly";
-//                            print $query;  
-      return $this->query($query);
-   }
 
-   function all_advisees() {
-      $query = "Select * from student inner join faculty on student.student_has_id=faculty.student_has_id";
+   function get_all_students() {
+      $query = "Select * from student";
 //                            print $query;  
       return $this->query($query);
    }
