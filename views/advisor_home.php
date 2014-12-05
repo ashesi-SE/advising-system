@@ -163,7 +163,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li class="active">
-                            <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Calender</a>
+                            <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Calendar</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-wrench"></i> Set Available Times</a>
@@ -223,7 +223,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-                                Calender <small>Your Schedule for the Month</small>
+                                Calendar <small>Your Schedule for the Month</small>
                             </h1>
                             <ol class="breadcrumb">
                                 <li class="active">
