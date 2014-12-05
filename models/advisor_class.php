@@ -43,6 +43,14 @@ class advisor_class extends adb {
       return $this->query($query);
    }
 
+   
+//   function get_student_has_advisor_id_by_student_id($id)
+//   {
+//       $query = "Select * from student_has_advisor where student_id =$id";
+////       print $query;
+//       return $this->query($query);  
+//   }
+   
 }
 
 //$advisor_id = 1;

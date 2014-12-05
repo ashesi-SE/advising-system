@@ -20,7 +20,7 @@ function login() {
 
 //                alert(r.result);
    if (r.result === 1) { // signifies manager
-      window.open("studentView.php", "_self");
+      window.open("student_view.php", "_self");
    }
    else {
       alert("username or password wrong");

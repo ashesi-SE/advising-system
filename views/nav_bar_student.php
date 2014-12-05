@@ -36,35 +36,33 @@ $advisor_id = 1;
    <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav bs-docs-sidebar" id="sidebar">
          <li class="active">
-            <a href="advisor_home.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <a href="student_view.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
          </li>
          <li>
-            <a href="advisor_home.php"><i class="fa fa-fw fa-wrench"></i> Available Times</a>
+            <a href="student_view.php"><i class="fa fa-fw fa-wrench"></i> Pick Meeting Time</a>
          </li>
-         <li>
+<!--         <li>
             <a href="#"><i class="fa fa-fw fa-edit"></i> Send Report To HOD</a>
          </li>
          <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse">
-         </li>
+         </li>-->
          <?php
-//                        print "dafaf";
-//                        $advisor_id = 1;
-         include_once '../models/advisor_class.php';
-         $adv_obj = new advisor_class();
-         if ($adv_obj->get_advisees($advisor_id)) {
-            $row = $adv_obj->fetch();
-
-            while ($row) {
-
-               print "<li>" . "<a href='student_details.php?student_name=".$row["first_name"]. " " . $row["last_name"]."'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
-               print $row["first_name"] . " " . $row["last_name"];
-               print"</a>" . "</li>";
-
-               $row = $adv_obj->fetch();
-            }
-         }
+//         include_once '../models/advisor_class.php';
+//         $adv_obj = new advisor_class();
+//         if ($adv_obj->get_advisees($advisor_id)) {
+//            $row = $adv_obj->fetch();
+//
+//            while ($row) {
+//
+//               print "<li>" . "<a href='student_details.php?student_name=".$row["first_name"]. " " . $row["last_name"]."'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+//               print $row["first_name"] . " " . $row["last_name"];
+//               print"</a>" . "</li>";
+//
+//               $row = $adv_obj->fetch();
+//            }
+//         }
          ?>
       </ul>
       </li>
