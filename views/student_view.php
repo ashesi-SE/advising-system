@@ -21,6 +21,8 @@
 
       <!-- Custom Fonts -->
       <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      
+      <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
 
       <!--my css to make it sidebar scrollable-->
       <link href="css/del.css" rel="stylesheet" type="text/css"/>
@@ -590,6 +592,7 @@
                            </div>
                         </div>
                      </div>
+                    
                   </div>
                   <!-- /.row -->
 
