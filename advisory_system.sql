@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2014 at 04:06 PM
+-- Generation Time: Dec 06, 2014 at 09:18 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -27,12 +27,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `advisor_free_times` (
-  `advisor_free_times_id` int(11) NOT NULL,
+  `advisor_free_times_id` int(11) NOT NULL AUTO_INCREMENT,
   `dates_available` datetime DEFAULT NULL,
   `faculty_id` int(11) NOT NULL,
   PRIMARY KEY (`advisor_free_times_id`),
   KEY `fk_advisor_free_times_faculty_idx` (`faculty_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `advisor_free_times` (
 --
 
 CREATE TABLE IF NOT EXISTS `faculty` (
-  `faculty_id` int(11) NOT NULL,
+  `faculty_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `middle_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
@@ -68,12 +68,12 @@ INSERT INTO `faculty` (`faculty_id`, `first_name`, `middle_name`, `last_name`, `
 --
 
 CREATE TABLE IF NOT EXISTS `messages` (
-  `msg_id` int(11) NOT NULL,
+  `msg_id` int(11) NOT NULL AUTO_INCREMENT,
   `message` text,
   `student_has_advisor_id` int(11) NOT NULL,
   PRIMARY KEY (`msg_id`),
   KEY `fk_messages_student_has_advisor1_idx` (`student_has_advisor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -82,14 +82,14 @@ CREATE TABLE IF NOT EXISTS `messages` (
 --
 
 CREATE TABLE IF NOT EXISTS `sessions` (
-  `sessions_id` int(11) NOT NULL,
+  `sessions_id` int(11) NOT NULL AUTO_INCREMENT,
   `scheduled_time` datetime DEFAULT NULL,
   `actual_time` datetime DEFAULT NULL,
   `session_notes` text,
   `student_has_advisor_id` int(11) NOT NULL,
   PRIMARY KEY (`sessions_id`),
   KEY `fk_sessions_student_has_advisor1_idx` (`student_has_advisor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 CREATE TABLE IF NOT EXISTS `student` (
-  `student_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `middle_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
@@ -128,13 +128,13 @@ INSERT INTO `student` (`student_id`, `first_name`, `middle_name`, `last_name`, `
 --
 
 CREATE TABLE IF NOT EXISTS `student_grades` (
-  `grade_id` int(11) NOT NULL,
+  `grade_id` int(11) NOT NULL AUTO_INCREMENT,
   `course_name` varchar(45) DEFAULT NULL,
   `grade` varchar(5) DEFAULT NULL,
   `student_id` int(11) NOT NULL,
   PRIMARY KEY (`grade_id`),
   KEY `fk_student_grades_student1_idx` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `student_grades` (
 --
 
 CREATE TABLE IF NOT EXISTS `student_has_advisor` (
-  `student_has_advisor_id` int(11) NOT NULL,
+  `student_has_advisor_id` int(11) NOT NULL AUTO_INCREMENT,
   `faculty_faculty_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
   PRIMARY KEY (`student_has_advisor_id`),
