@@ -42,19 +42,26 @@ $(document).ready(function () {
 //   }
 });
 
+function syncAjax(u) {
+   var obj = $.ajax({url: u, async: false});
+   return $.parseJSON(obj.responseText);
+}
+
 function assign_students() {
-   
-   
-   
+
+   var user = 0;
+   var pass = 0;
+
    //complete the url
    var u = "action_del.php?cmd=2&user=" + user + "&pass=" + pass;
 //   prompt("url", u);
    students = syncAjax(u);
-   
-   
-   
-    var u = "action_del.php?cmd=3&user=" + user + "&pass=" + pass;
-   advisors = syncAjax(u);
+
+
+
+   var u2 = "action_del.php?cmd=3&user=" + user + "&pass=" + pass;
+   prompt("url", u2);
+   advisors = syncAjax(u2);
 //   prompt(r.user);
 
 //                alert(r.result);

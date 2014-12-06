@@ -312,15 +312,15 @@
    <script src="js/plugins/morris/morris-data.js"></script>-->
    <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 
-
+   <script src="js/del.js" type="text/javascript"></script>
 
    <script>
 
-      $(document).ready(function () {
-//            debugger
-//         $('#dataTables-example').dataTable();
-//         $('#dataTables-example1').dataTable();
-      });
+//      $(document).ready(function () {
+////            debugger
+////         $('#dataTables-example').dataTable();
+////         $('#dataTables-example1').dataTable();
+//      });
 
 
       $(function () {

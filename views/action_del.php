@@ -13,7 +13,7 @@ switch ($cmd) {
       break;
 
    case 3:
-      get_advisees();
+      get_advisors();
       break;
 
    case 4:
@@ -31,7 +31,7 @@ switch ($cmd) {
    case 7:
       send_request_to_manager();
       break;
-   
+
    case 8:
       login_facutly();
       break;
@@ -43,18 +43,96 @@ switch ($cmd) {
       echo "}";
 }
 
-function assign_students(){
+function assign_students() {
    include_once '';
-   
 }
 
-function get_students(){
+function get_students() {
    include_once '../models/student_class.php';
-   
+   $s_obj = new student_class();
+   if (!$s_obj->get_all_students()) {
+      echo "{";
+      echo jsonn("result", 0) . ",";
+      echo jsons("Message", "No students found");
+      echo "}";
+      return;
+   }
+   $row = $s_obj->fetch();
+
+   if (!$row) {
+
+      echo "{";
+      echo jsonn("result", 0) . ",";
+      echo jsons("Message", "No students found1d");
+      echo "}";
+      return;
+   } else {
+      echo "{";
+      echo jsonn("result", 1);
+      echo ',"subjects":';
+      echo "[";
+
+      while ($row) {
+         echo "{";
+         echo jsonn("student_id", $row["student_id"]) . ",";
+         echo jsons("first_name", $row["first_name"]) . ",";
+         echo jsons("middle_name", $row["middle_name"]) . ",";
+         echo jsons("last_name", $row["last_name"]) . ",";
+         echo jsons("username", $row["username"]) . ",";
+         echo jsons("major", $row["major"]);
+         echo "}";
+
+         $row = $s_obj->fetch();
+         if ($row) {
+            echo ",";
+         }
+      }
+      echo "]}";
+   }
 }
-function get_advisors(){
+
+function get_advisors() {
    include_once '../models/advisor_class.php';
-   
+   $s_obj = new advisor_class();
+   if (!$s_obj->get_all_advisors()) {
+      echo "{";
+      echo jsonn("result", 0) . ",";
+      echo jsons("Message", "No advisors found");
+      echo "}";
+      return;
+   }
+   $row = $s_obj->fetch();
+
+   if (!$row) {
+
+      echo "{";
+      echo jsonn("result", 0) . ",";
+      echo jsons("Message", "No advisors found1d");
+      echo "}";
+      return;
+   } else {
+      echo "{";
+      echo jsonn("result", 1);
+      echo ',"subjects":';
+      echo "[";
+
+      while ($row) {
+         echo "{";
+         echo jsonn("faculty_id", $row["faculty_id"]) . ",";
+         echo jsons("first_name", $row["first_name"]) . ",";
+         echo jsons("middle_name", $row["middle_name"]) . ",";
+         echo jsons("last_name", $row["last_name"]) . ",";
+         echo jsons("username", $row["username"]) . ",";
+         echo jsons("department_name", $row["department_name"]);
+         echo "}";
+
+         $row = $s_obj->fetch();
+         if ($row) {
+            echo ",";
+         }
+      }
+      echo "]}";
+   }
 }
 
 function send_request_to_manager() {
