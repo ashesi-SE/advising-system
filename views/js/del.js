@@ -42,6 +42,16 @@ $(document).ready(function () {
 //   }
 });
 
+//   source http://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
+function split(a, n) {
+   var len = a.length, out = [], i = 0;
+   while (i < len) {
+      var size = Math.ceil((len - i) / n--);
+      out.push(a.slice(i, i += size));
+   }
+   return out;
+}
+
 function syncAjax(u) {
    var obj = $.ajax({url: u, async: false});
    return $.parseJSON(obj.responseText);
@@ -102,41 +112,85 @@ function assign_students() {
       }
    }
 
+//   inchargeglobal.com
+// 05776655
+
+
 //   alert(csAdvisors.length);//2
 //   alert(baAdvisors.length);//2
 //   alert(csStudents.length);//3
 //   alert(baStudents.length);//4
-   
-   
-//   var assigningCs = [[csAdvisors[0],csStudents[0]]];
+
    var assigningCs = new Array();
-   
-   
+   var assigningBa = new Array();
+
+
    // number of students per advisor
-   
-   for(var i = 0; i < csAdvisors.length; i++){
-      for(var j = 0; j < csStudents.length/csAdvisors.length; j++){
-         assigningCs.push(csAdvisors[i].getId() + " ~ " + csStudents[j].getId());
-         
-      }
-      for(var j = csStudents.length; j < csStudents.length/csAdvisors.length; j--){
-         assigningCs.push(csAdvisors[i].getId() + " ~ " + csStudents[j].getId());
-         
-      }
-   }
-   debugger;
-   for(var i = 0; i< assigningCs.length; i++){
-      alert(assigningCs[i]);
-   }
-   
-   
+   var num_stud_per_adv_cs = csStudents.length / csAdvisors.length;
 
-   if (r.result === 1) { // signifies manager
-      window.open("player_profile.php", "_self");
+   var a = split(csStudents, num_stud_per_adv_cs);
+
+
+
+//   debugger;
+//   alert(a);
+
+   for (var i = 0; i < a.length; i++) {
+      for (var j = 0; j < a[i].length; j++) {
+
+         // send to db with respective advisor
+         var url = "action_del.php?cmd=1&advisor_id=" + csAdvisors[i].getId() + "&student_id=" + a[i][j].getId();
+//         prompt("url", url);
+         var sent = syncAjax(url);
+
+         if (sent.result === 0) { // signifies manager
+            alert(sent.message + " Tried: action_del.php?cmd=1&advisor_id=" + csAdvisors[i].getId() + "&student_id=" + a[i][j].getId());
+         }
+//         else{
+//            alert(sent.message);
+//         }
+      }
+   }
+   alert("Assigned CS/MIS student successfully");
+   // number of students per advisor ba
+   var num_stud_per_adv_ba = baStudents.length / baAdvisors.length;
+
+   var b = split(baStudents, num_stud_per_adv_ba);
+
+
+
+//   debugger;
+//   alert(a);
+
+   for (var i = 0; i < b.length; i++) {
+      for (var j = 0; j < b[i].length; j++) {
+
+         // send to db with respective advisor
+         var url = "action_del.php?cmd=1&advisor_id=" + baAdvisors[i].getId() + "&student_id=" + b[i][j].getId();
+         prompt("url", url);
+         var sent = syncAjax(url);
+
+         if (sent.result === 0) { // signifies manager
+            alert(sent.message + " Tried: action_del.php?cmd=1&advisor_id=" + baAdvisors[i].getId() + "&student_id=" + a[i][j].getId());
+         }
+//         else{
+//            alert(sent.message);
+//         }
+      }
    }
 
-   else {
-      alert("username or password wrong");
-      return;
-   }
+   alert("Assigned BA students successfully");
+
+
+
+
+
+//   if (r.result === 1) { // signifies manager
+//      window.open("player_profile.php", "_self");
+//   }
+//
+//   else {
+//      alert("username or password wrong");
+//      return;
+//   }
 }

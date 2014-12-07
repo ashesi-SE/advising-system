@@ -44,7 +44,22 @@ switch ($cmd) {
 }
 
 function assign_students() {
-   include_once '';
+   include_once '../models/student_has_advisor_class.php';
+   $student_id = get_data("student_id");
+   $advisor_id = get_data("advisor_id");
+
+   $obj = new student_has_advisor_class();
+   if (!$obj->assign_student_to_advisor($student_id, $advisor_id)) {
+      echo "{";
+      echo jsonn("result", 0) . ",";
+      echo jsons("message", "Could not assign student to advisor");
+      echo "}";
+      return;
+   }
+   echo "{";
+   echo jsonn("result", 1) . ",";
+   echo jsons("message", "Successful assignment");
+   echo "}";
 }
 
 function get_students() {
