@@ -146,7 +146,7 @@ function assign_students() {
       }
    }
    alert("Assigned CS/MIS student successfully");
-   
+
    // number of students per advisor ba
    var num_stud_per_adv_ba = baStudents.length / baAdvisors.length;
 
@@ -173,7 +173,7 @@ function assign_students() {
    }
 
    alert("Assigned BA students successfully");
-
+   alert("Total students: " + (csStudents.length + baStudents) + " CS/MIS:" + csStudents.length + " BA: " + baStudents);
 
 
 
