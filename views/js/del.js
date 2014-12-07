@@ -124,13 +124,10 @@ function assign_students() {
    var assigningCs = new Array();
    var assigningBa = new Array();
 
-
    // number of students per advisor
    var num_stud_per_adv_cs = csStudents.length / csAdvisors.length;
 
    var a = split(csStudents, num_stud_per_adv_cs);
-
-
 
 //   debugger;
 //   alert(a);
@@ -146,18 +143,14 @@ function assign_students() {
          if (sent.result === 0) { // signifies manager
             alert(sent.message + " Tried: action_del.php?cmd=1&advisor_id=" + csAdvisors[i].getId() + "&student_id=" + a[i][j].getId());
          }
-//         else{
-//            alert(sent.message);
-//         }
       }
    }
    alert("Assigned CS/MIS student successfully");
+   
    // number of students per advisor ba
    var num_stud_per_adv_ba = baStudents.length / baAdvisors.length;
 
    var b = split(baStudents, num_stud_per_adv_ba);
-
-
 
 //   debugger;
 //   alert(a);
@@ -167,7 +160,7 @@ function assign_students() {
 
          // send to db with respective advisor
          var url = "action_del.php?cmd=1&advisor_id=" + baAdvisors[i].getId() + "&student_id=" + b[i][j].getId();
-         prompt("url", url);
+//         prompt("url", url);
          var sent = syncAjax(url);
 
          if (sent.result === 0) { // signifies manager
