@@ -69,7 +69,7 @@ class login_class extends adb {
    function loadAdminProfile($username) {
       //load username and other informaiton into the session      
       $query = "select * from faculty where username = '$username';";
-
+//print $query;
       $this->query($query);
 
       $result = $this->fetch();
@@ -77,7 +77,10 @@ class login_class extends adb {
 
       $_SESSION['username'] = $username;
 //      $_SESSION['role'] = $result['role_role_id'];
-      $_SESSION['id'] = $result['faculty_id'];
+      $_SESSION['faculty_id'] = $result['faculty_id'];
+      $_SESSION['firstname'] = $result['first_name'];
+      $_SESSION['lastname'] = $result['last_name'];
+      
 //      $_SESSION['team_id'] = $result['team_team_id'];
 
 

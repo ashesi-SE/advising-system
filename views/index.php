@@ -5,8 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Log In</title>
       <link href="../views/css/bootstrap.css" rel="stylesheet">
-      <link href="../views/css/fonts/FontAwesome/font-awesome-4.0.3.min.css" rel="stylesheet">
-      <link href="../views/css/style.css" rel="stylesheet">
+      <!--<link href="../views/css/fonts/FontAwesome/font-awesome-4.0.3.min.css" rel="stylesheet">-->
+      <!--<link href="../views/css/style.css" rel="stylesheet">-->
    </head>
    <body>
       <nav class="navbar navbar-inverse" role="navigation">
@@ -96,6 +96,6 @@
    </footer>
 
    <script src="../views/js/jquery-1.11.0.js"></script>
-   <script src="../views/js/bootstrap.min.js"></script>
+   <!--<script src="../views/js/bootstrap.min.js"></script>-->
    <script src="../controllers/del.js"></script>
 </html>
