@@ -69,7 +69,7 @@ function get_students() {
    } else {
       echo "{";
       echo jsonn("result", 1);
-      echo ',"subjects":';
+      echo ',"students":';
       echo "[";
 
       while ($row) {
@@ -113,7 +113,7 @@ function get_advisors() {
    } else {
       echo "{";
       echo jsonn("result", 1);
-      echo ',"subjects":';
+      echo ',"advisors":';
       echo "[";
 
       while ($row) {
