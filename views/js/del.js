@@ -145,7 +145,7 @@ function assign_students() {
          }
       }
    }
-   alert("Assigned CS/MIS student successfully");
+//   alert("Assigned CS/MIS student successfully");
 
    // number of students per advisor ba
    var num_stud_per_adv_ba = baStudents.length / baAdvisors.length;
@@ -166,13 +166,10 @@ function assign_students() {
          if (sent.result === 0) { // signifies manager
             alert(sent.message + " Tried: action_del.php?cmd=1&advisor_id=" + baAdvisors[i].getId() + "&student_id=" + a[i][j].getId());
          }
-//         else{
-//            alert(sent.message);
-//         }
       }
    }
 
-   alert("Assigned BA students successfully");
+//   alert("Assigned BA students successfully");
    alert("Total students: " + (csStudents.length + baStudents) + " CS/MIS:" + csStudents.length + " BA: " + baStudents);
 
 
