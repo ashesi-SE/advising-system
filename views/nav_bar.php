@@ -1,5 +1,12 @@
 <?php
-$advisor_id = 1;
+session_start();
+
+$advisor_id = 0;
+if (isset($_SESSION['faculty_id'])) {
+
+   $advisor_id = $_SESSION['faculty_id'];
+   $advisor_name = $_SESSION['username'];
+}
 ?>
 
 <!-- Navigation -->
@@ -17,7 +24,7 @@ $advisor_id = 1;
    <!-- Top Menu Items -->
    <ul class="nav navbar-right top-nav">
       <li class="dropdown">
-         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php print($_SESSION['firstname'] . " " . $_SESSION['lastname']) ?> <b class="caret"></b></a>
 
          <ul class="dropdown-menu">
             <!--            <li class="divider"></li>-->
@@ -58,7 +65,7 @@ $advisor_id = 1;
 
             while ($row) {
 
-               print "<li>" . "<a href='advisor_student_details.php?student_name=".$row["first_name"]. " " . $row["last_name"]."'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+               print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
                print $row["first_name"] . " " . $row["last_name"];
                print"</a>" . "</li>";
 
