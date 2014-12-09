@@ -45,3 +45,20 @@ function login_faculty() {
       return;
    }
 }
+function login_provost() {
+   var user = document.getElementById("username").value;
+   var pass = document.getElementById("password").value;
+   var u = "action_del.php?cmd=9&user=" + user + "&pass=" + pass;
+//   prompt("r.user", u);
+   r = syncAjax(u);
+//   prompt(r.user);
+
+//                alert(r.result);
+   if (r.result === 1) { // signifies manager
+      window.open("provost_home.php", "_self");
+   }
+   else {
+      alert("username or password wrong");
+      return;
+   }
+}

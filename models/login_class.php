@@ -87,4 +87,38 @@ class login_class extends adb {
       return $result;
    }
 
+   function loginProvost($user, $pass) {
+      $query = "select count(*) as c from faculty where username = '$user' and password = '$pass' and role='provost'";
+//        print "quere " . $query;
+      $this->query($query);
+
+      $result = $this->fetch();
+      if ($result['c'] == 1) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
+   function loadProProfile($username) {
+      //load username and other informaiton into the session      
+      $query = "select * from faculty where username = '$username';";
+//print $query;
+      $this->query($query);
+
+      $result = $this->fetch();
+      session_start();
+
+      $_SESSION['username'] = $username;
+//      $_SESSION['role'] = $result['role_role_id'];
+      $_SESSION['faculty_id'] = $result['faculty_id'];
+      $_SESSION['firstname'] = $result['first_name'];
+      $_SESSION['lastname'] = $result['last_name'];
+      
+//      $_SESSION['team_id'] = $result['team_team_id'];
+
+
+      return $result;
+   }
+
 }

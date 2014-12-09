@@ -73,6 +73,10 @@ function assign_students() {
    var u2 = "action_del.php?cmd=3&user=" + user + "&pass=" + pass;
 //   prompt("url", u2);
    advisors = syncAjax(u2);
+   
+   var u3 = "action_del.php?cmd=10&user=" + user + "&pass=" + pass;
+   prompt("url", u3);
+   syncAjax(u3);
 
    students.students;
    advisors.advisors;
@@ -170,7 +174,7 @@ function assign_students() {
    }
 
 //   alert("Assigned BA students successfully");
-   alert("Total students: " + (csStudents.length + baStudents) + " CS/MIS:" + csStudents.length + " BA: " + baStudents);
+   alert("Total students: " + ((csStudents.length + baStudents.length)) + " CS/MIS:" + csStudents.length + " BA: " + baStudents.length);
 
 
 
