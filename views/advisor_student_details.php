@@ -501,10 +501,10 @@
                      </div>
                      <div class="panel-body">
                         <div class="list-group">
-                           <div href="#" class="list-group-item">
+                           <div  class="list-group-item">
                               <textarea style="width: 100%" placeholder="Input message to send"> </textarea>
                               <!--<i class="fa fa-fw fa-calendar"></i>-->
-                              <button class="btn btn-success btn-block">Send</button>
+                              <button onclick ="send_messgae_to_student(<?php print $student_has_advisor_id?>)" class="btn btn-success btn-block">Send</button>
                            </div>
                            <div class="text-right">
                               <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>

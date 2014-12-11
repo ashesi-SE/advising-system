@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+session_start();
+include_once '../models/student_has_advisor_class.php';
+$id_student = $_SESSION['id'];
+$obj = new student_has_advisor_class();
+$obj->get_student_has_advisor_by_studet_id($id_student);
+$row = $obj->fetch();
+//$student_has_advisor_id = $row['student_has_advisor_id'];
+$student_has_advisor_id = 1;
+
+?>
 <html lang="en">
    <head>
 
@@ -581,10 +592,10 @@
                         </div>
                         <div class="panel-body">
                            <div class="list-group">
-                              <div href="#" class="list-group-item">
-                                 <textarea style="width: 100%" placeholder="Input message to send"> </textarea>
+                              <div  class="list-group-item">
+                                 <textarea id="message" style="width: 100%" placeholder="Input message to send"> </textarea>
                                  <!--<i class="fa fa-fw fa-calendar"></i>-->
-                                 <button class="btn btn-success btn-block">Send</button>
+                                 <button onclick = "send_meeting(<?php print $student_has_advisor_id?>)" class="btn btn-success btn-block">Send</button>
                               </div>
                               <div class="text-right">
                                  <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
@@ -621,13 +632,13 @@
 <!--      <script src="js/plugins/morris/morris.min.js"></script>
       <script src="js/plugins/morris/morris-data.js"></script>-->
 
-
+   
 
       <script src="js/jquery.dataTables.js" type="text/javascript"></script>
       <script src="js/dataTables.bootstrap.js" type="text/javascript"></script>
       <script src="js/jquery.datetimepicker.js" type="text/javascript"></script>
       <script src="js/del.js" type="text/javascript"></script>
-
+      <script src="../controllers/korkor.js" type="text/javascript"></script>
       <script>
          $(document).ready(function () {
 //            debugger

@@ -13,7 +13,26 @@ function syncAjax(u) {
 
 }
 
-function saveDone(data) {
+function send_meeting(id)
+{
+    var message = document.getElementById("message").value;
+    alert("message to advisor");  
+    var u = "action_korkor.php?cmd=3&id="+id +"&message=" + message;
+    prompt("u", u);
+    var r = syncAjax(u);      
+    
+    if(r.result === 1)
+    {
+        alert("Your messgae has been sent to your advisor");
+    }
+    
+    else if(r.result === 0 )
+    {
+        alert("not added");
+    }
+}
+
+function saveDone(data) {   
     alert(data);
 }
 
