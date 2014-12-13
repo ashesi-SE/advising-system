@@ -42,7 +42,7 @@ class message extends adb{
                 
                 function send_message_to_student($student_has_advisor_id, $message)
                 {
-                    $query="Insert into messages (message,student_has_advisor_id, recepient, date_created) values ('$message', $student_has_advisor_id,'student',now())";
+                    $query="Insert into messages (message,student_has_advisor_id, recepient, date_created) values ('$message', $student_has_advisor_id,'student',now())";  
 //                    print $query;
 			return $this->query($query);  
                 }  

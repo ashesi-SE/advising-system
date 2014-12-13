@@ -15,12 +15,40 @@ switch ($cmd) {
     case 3:
         send_message_to_advisor();
         break;
+    
+    case 4:
+        send_message_to_student();
+        break;
 
     default:
         echo "{";
         echo jsonn("result", 0) . ",";
         echo jsons("message", "unknown command");
         echo "}";
+}
+
+function send_message_to_student()    
+{
+    include_once '../models/message.php';  
+    $id = get_datan("id");
+    $message = get_data("message");
+    $obj = new message();
+    
+    if ($obj->send_message_to_student($id, $message)) {
+        echo "{";
+        echo jsonn("result", 1) . ",";
+        echo jsons("message", "herer");
+        echo "}";
+    }  
+    
+ else {  
+ echo "{";
+        echo jsonn("result", 0) . ",";
+        echo jsons("message", "herer");
+        echo "}";          
+ }
+    
+    
 }
 
 function send_message_to_advisor()

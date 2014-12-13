@@ -65,9 +65,9 @@ if (isset($_SESSION['faculty_id'])) {
 
             while ($row) {
 
-               print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+               print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "&student_id=" . $row["student_id"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
                print $row["first_name"] . " " . $row["last_name"];
-               print"</a>" . "</li>";
+               print"</a>" . "</li>";  
 
                $row = $adv_obj->fetch();
             }

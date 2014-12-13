@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+$student_id = $_REQUEST['student_id'];
+//$faculty_id = $_SESSION['faculty_id']; 
+include_once '../models/student_has_advisor_class.php';
+$obj = new student_has_advisor_class();
+$student_has_advisor_id = "";
+$obj->get_student_has_advisor_by_studet_id($student_id); 
+$row = $obj->fetch();
+if($row)
+{
+   $student_has_advisor_id = $row['student_has_advisor_id']; 
+}    
+
+?>
 <html lang="en">
    <head>
 
@@ -493,7 +509,7 @@
                                        </div>
                                     </div>
                                  </div>-->
-               <!--               </div>-->
+               <!--               </div>-->   
                <div class="col-lg-12">
                   <div class="panel panel-default">
                      <div class="panel-heading">
@@ -502,9 +518,9 @@
                      <div class="panel-body">
                         <div class="list-group">
                            <div  class="list-group-item">
-                              <textarea style="width: 100%" placeholder="Input message to send"> </textarea>
+                              <textarea id= "message_student" style="width: 100%" placeholder="Input message to send"> </textarea>
                               <!--<i class="fa fa-fw fa-calendar"></i>-->
-                              <button onclick ="send_messgae_to_student(<?php print $student_has_advisor_id?>)" class="btn btn-success btn-block">Send</button>
+                              <button onclick ="send_message_to_student(<?php print $student_has_advisor_id?>)" class="btn btn-success btn-block">Send</button>
                            </div>
                            <div class="text-right">
                               <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
@@ -610,7 +626,7 @@
       <script src="js/plugins/morris/morris.min.js"></script>
       <script src="js/plugins/morris/morris-data.js"></script>
       <script src="js/del.js" type="text/javascript"></script>
-
+      <script src="../controllers/korkor.js" type="text/javascript"></script>
    </body>
 
 </html>

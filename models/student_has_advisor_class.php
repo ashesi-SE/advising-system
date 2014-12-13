@@ -73,7 +73,7 @@ class student_has_advisor_class extends adb {
    
    function get_student_has_advisor_by_advisor_id($id)
    {
-       $query = "Select * from student_has_advisor where faculty_faculty_id  =$id";
+       $query = "Select * from student_has_advisor where faculty_faculty_id =$id";
 
       return $this->query($query);    
    }
