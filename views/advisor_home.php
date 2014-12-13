@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$faculty_id = $_SESSION['faculty_id'];
+include_once '../models/student_has_advisor_class.php';
+$obj = new student_has_advisor_class();
+
+$obj->get_student_has_advisor_by_advisor_id($faculty_id);
+$row = $obj ->fetch();
+$student_advisor_id = $row['student_has_advisor_id'];
+?>
 <html lang="en">
 
    <head>

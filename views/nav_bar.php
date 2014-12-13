@@ -1,13 +1,11 @@
 <?php
 session_start();
-
 $advisor_id = 0;
 if (isset($_SESSION['faculty_id'])) {
-
    $advisor_id = $_SESSION['faculty_id'];
    $advisor_name = $_SESSION['username'];
-}
-?>
+}  
+?>  
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -49,12 +47,12 @@ if (isset($_SESSION['faculty_id'])) {
             <a href="advisor_home.php"><i class="fa fa-fw fa-wrench"></i> Available Times</a>
          </li>
          <li>
-            <a href="send_report_advisor.php"><i class="fa fa-fw fa-edit"></i> Send Report To HOD</a>
+            <a href="#"><i class="fa fa-fw fa-edit"></i> Send Report To HOD</a>
          </li>
          <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse">
-         
+         </li>
          <?php
 //                        print "dafaf";
 //                        $advisor_id = 1;
@@ -62,13 +60,10 @@ if (isset($_SESSION['faculty_id'])) {
          $adv_obj = new advisor_class();
          if ($adv_obj->get_advisees($advisor_id)) {
             $row = $adv_obj->fetch();
-
             while ($row) {
-
-               print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+               print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "&student_id=" . $row["student_id"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
                print $row["first_name"] . " " . $row["last_name"];
-               print"</a>" . "</li>";
-
+               print"</a>" . "</li>";  
                $row = $adv_obj->fetch();
             }
          }

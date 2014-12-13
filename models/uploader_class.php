@@ -3,19 +3,39 @@
 include_once 'adb.php';
 
 /**
- * Description of student_class
+ * Description of advisor_class
  *
- * @author Del
+ * @author maltiti
  */
-class student_class extends adb {
+class uploader_class extends adb {
 
    //put your code here
-   function student_class() {
+   function uploader_class() {
       adb::adb();
    }
 
-   function get_all_students() {
-      $query = "Select * from student";
+   function uploader($faculty_id, $path) {
+      $query2 = "insert into upload(faculty_id, path,date_created) values($faculty_id, '$path',now())";
+
+//      print $query2;
+      return $this->query($query2);
+   }
+
+   function files() {
+
+      $query = "select * from upload left join faculty on faculty.faculty_id = upload.faculty_id order by Date(date_created) desc";
+//                            print $query;  
+      return $this->query($query);
+   }
+
+   function get_all_advisors() {
+      $query = "Select * from faculty";
+//                            print $query;  
+      return $this->query($query);
+   }
+
+   function all_advisees() {
+      $query = "Select * from student inner join faculty on student.student_has_id=faculty.student_has_id";
 //                            print $query;  
       return $this->query($query);
    }
@@ -42,14 +62,18 @@ class student_class extends adb {
 
       return $this->query($query);
    }
-   
-   function  get_student_details_from_id($id)
-   {
-       $query = "Select * from student where student_id = $id";
-      return $this->query($query);  
+
+   function get_student_has_advisor_by_studet_id($id) {
+      $query = "Select * from student_has_advisor where student_id =$id";
+
+      return $this->query($query);
    }
 
+   function get_student_has_advisor_by_advisor_id($id) {
+      $query = "Select * from student_has_advisor where faculty_faculty_id =$id";
 
+      return $this->query($query);
+   }
 
 //   function get_student_has_advisor_id_by_student_id($id)
 //   {
@@ -57,7 +81,6 @@ class student_class extends adb {
 ////       print $query;
 //       return $this->query($query);  
 //   }
-   
 }
 
 //$advisor_id = 1;

@@ -71,77 +71,31 @@
                               <table class="table table-bordered table-hover table-striped" id="dataTables-example">  
                                  <thead>
                                     <tr>
-                                       <th> Advisor</th>
-                                       <th> Student</th>
-                                       <!--<th> Select</th>-->
+                                       <th> Report</th>
+                                       <th> Faculty</th>
+                                       <th> Date Sent</th>
                                        <!--<th>Amount (USD)</th>-->
                                     </tr>
                                  </thead>
                                  <tbody>
                                     <tr>
                                        <?php
-//                                       include_once '';
+                                       include_once '../models/uploader_class.php';
+                                       $getfiles_obj = new uploader_class();
+                                       if ($getfiles_obj->files()) {
+                                          $row = $getfiles_obj->fetch();
+
+                                          while ($row) {
+
+                                             print("<tr><td>" . $row['first_name'] . " " . $row['last_name'] . "</td>");
+                                             print("<td><a href='../uploads/$row[path]'>" . $row['path'] . "</a></td>");
+                                             print("<td>" . $row['date_created'] . "</td></tr>");
+
+                                             $row = $getfiles_obj->fetch();
+                                          }
+                                       }
                                        ?>
 
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Martha Kumi
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Margaret Kumi
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Fiifi Baako
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Philip Black
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Nii Apa 
-                                          <!--</div>-->
-                                       </td>
                                     </tr>
                                  </tbody>
                               </table>
