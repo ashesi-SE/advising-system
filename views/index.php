@@ -66,6 +66,7 @@
                            <a href="#"><input type="submit" value="Log in as Student" class="btn btn-default btn-sm" onclick="login()"/></a> 
                            <a href="#"><input type="button" value="Log in as Faculty" class="btn btn-default btn-sm" onclick="login_faculty()"/></a>
                            <a href="#"><input type="button" value="Log in as Provost" class="btn btn-default btn-sm" onclick="login_provost()"/></a>
+                           <a href="#"><input type="button" value="Log in as Head of Dept" class="btn btn-default btn-sm" onclick="login_hod()"/></a>
 
                         </div>
                      </div>

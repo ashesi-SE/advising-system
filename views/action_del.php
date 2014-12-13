@@ -44,6 +44,10 @@ switch ($cmd) {
       delete();
       break;
 
+   case 11:
+      login_hod();
+      break;
+
    default:
       echo "{";
       echo jsonn("result", 0) . ",";
@@ -51,7 +55,7 @@ switch ($cmd) {
       echo "}";
 }
 
-function delete(){
+function delete() {
    include_once '../models/student_has_advisor_class.php';
    $obj = new student_has_advisor_class();
    if (!$obj->delete()) {
@@ -334,6 +338,34 @@ function login_provost() {
    $val = $p->loginProvost($user, $pass);
    if ($val) {
       $row = $p->loadProProfile($user);
+      if ($row) {
+         echo "{";
+         echo jsonn("result", 1);
+         echo ',"user":';
+         echo "{";
+         echo jsons("username", $row["username"]) . ",";
+         echo jsons("lastname", $row["last_name"]) . ",";
+         echo jsons("role", $row["role"]) . ",";
+//         print_r($row);
+         echo jsons("firstname", $row["first_name"]);
+         echo "}";
+         print "}";
+      }return;
+   }
+   echo "{";
+   echo jsonn("result", 0) . ",";
+   echo jsons("message", "error, no record retrieved");
+   echo "}";
+}
+
+function login_hod() {
+   include_once '../models/login_class.php';
+   $user = get_data('user');
+   $pass = get_data('pass');
+   $p = new login_class();
+   $val = $p->loginHOD($user, $pass);
+   if ($val) {
+      $row = $p->loadHODProfile($user);
       if ($row) {
          echo "{";
          echo jsonn("result", 1);
