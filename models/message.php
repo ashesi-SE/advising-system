@@ -48,10 +48,18 @@ class message extends adb{
                 } 
                 
                 function get_messages_to_student_by_id($id)
-                {
-                    $query="Select * from messages where student_has_advisor_id = $id and recepient = 'student'";  
+                { 
+                    $query="Select * from messages where student_has_advisor_id = $id and recepient = 'student' order by date(date_created) desc";  
 
 			return $this->query($query); 
+                }  
+                
+                function get_messages_to_advisor_by_id($id)  
+                {   
+                    $query = "Select * from student left join student_has_advisor on student.student_id = student_has_advisor.student_id left join messages on student_has_advisor.student_has_advisor_id = messages.student_has_advisor_id where messages.recepient = 'advisor' and student.student_id = $id";
+//                    $query="Select * from messages where student_id = $id and recepient = 'student'";  
+
+			return $this->query($query);  
                 }  
                 
 //                function add_programmer($firstname,$lastname,$othernames,$cid,$cvid,$email,$phonenumber,$qualifications)

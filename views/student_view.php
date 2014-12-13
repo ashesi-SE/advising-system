@@ -488,10 +488,10 @@ $student_has_advisor_id = $row['student_has_advisor_id'];
                                             $messages = "";
                                             if ($obj->get_messages_to_student_by_id($student_has_advisor_id)) {
                                                 $row = $obj->fetch();
-                                                while ($row) {
-                                                    $messages = $row['message'];
-                                                    $row = $obj->fetch();
-                                                }
+                                               
+                                                    $messages = $row['message'];  
+//                                                    $row = $obj->fetch();
+                                                
 
                                                 echo "<textarea style='width: 88%'> $messages</textarea>";
                                             }
@@ -657,7 +657,7 @@ $student_has_advisor_id = $row['student_has_advisor_id'];
   
 //                                                echo "<textarea style='width: 88%'> $messages</textarea>";
                                             }
-                                            ?>
+                                            ?>  
 <!--                                
                                 <li class="list-group-item">Documents</li>        
                                 <li class="list-group-item">Music</li>
@@ -666,7 +666,7 @@ $student_has_advisor_id = $row['student_has_advisor_id'];
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                         </div>
                     </div>
                 </div>
