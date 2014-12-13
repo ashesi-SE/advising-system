@@ -49,12 +49,12 @@ if (isset($_SESSION['faculty_id'])) {
             <a href="advisor_home.php"><i class="fa fa-fw fa-wrench"></i> Available Times</a>
          </li>
          <li>
-            <a href="#"><i class="fa fa-fw fa-edit"></i> Send Report To HOD</a>
+            <a href="send_report_advisor.php"><i class="fa fa-fw fa-edit"></i> Send Report To HOD</a>
          </li>
          <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse">
-         </li>
+         
          <?php
 //                        print "dafaf";
 //                        $advisor_id = 1;
