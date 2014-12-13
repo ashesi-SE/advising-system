@@ -31,7 +31,10 @@ function send_message_to_student(student_has_advisor_id)
     }
    
 }
-
+function showAllMessages()
+{
+    BootstrapDialog.alert('I want banana!');
+}
 function send_meeting(id)
 {
     var message = document.getElementById("message").value;
