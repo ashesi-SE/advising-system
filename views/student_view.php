@@ -500,25 +500,17 @@ $student_has_advisor_id = $row['student_has_advisor_id'];
                                             <i class="fa fa-fw fa-calendar"></i> 19-10-2014
                                         </div>
                                         <div class="text-right">
-                                            <!--<a onclick="showAllMessages()">View All Messages <i class="fa fa-arrow-circle-right"></i></a>-->
-                                            <a onclick="showAllMessages" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-                                        </div>
+                                            <a onclick="showAllMessages()" data-toggle="modal" data-target="#myModal">View All Messages <i class="fa fa-arrow-circle-right"></i></a>
+                                            <!--<a onclick="showAllMessages" role="button" class="btn" data-toggle="modal">Launch demo modal</a>-->
+                                            <!--<button type="button" >Launch modal</button>-->
+
+
+
+                                        </div>  
                                     </div>
                                 </div>
                             </div>
-                            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-  </div>
-</div>
+
                             <!--                  <div class="col-lg-4">
                                                  <div class="panel panel-default">
                                                     <div class="panel-heading">
@@ -629,7 +621,7 @@ $student_has_advisor_id = $row['student_has_advisor_id'];
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  
 
                         </div>
                         <!-- /.row -->
@@ -640,7 +632,45 @@ $student_has_advisor_id = $row['student_has_advisor_id'];
 
                 </div>
             </div>
-
+            <div id="myModal" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">These are messages from your advisor</h4>
+                        </div>
+                        <div class="modal-body">  
+            <!--                <p>Do you want to save changes you made to document before closing?</p>
+                            <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>-->
+                            <ul class="list-group">
+                                <?php
+                                            include_once '../models/message.php';
+                                            $obj = new message();
+                                            $messages = "";
+                                            if ($obj->get_messages_to_student_by_id($student_has_advisor_id)) {
+                                                $row = $obj->fetch();
+                                                while ($row) {
+                                                    echo "<li class='list-group-item'>$row[message]";
+//                                                    $messages = $row['message'];
+                                                    $row = $obj->fetch();
+                                                }  
+  
+//                                                echo "<textarea style='width: 88%'> $messages</textarea>";
+                                            }
+                                            ?>
+<!--                                
+                                <li class="list-group-item">Documents</li>        
+                                <li class="list-group-item">Music</li>
+                                <li class="list-group-item">Videos</li>-->
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- /#page-wrapper -->
 
         </div>
@@ -682,7 +712,7 @@ $student_has_advisor_id = $row['student_has_advisor_id'];
 //                                                });
         </script>
 
-   
+
     </body>
 
 </html>

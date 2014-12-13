@@ -11,7 +11,7 @@ if($obj->get_student_details_from_id($student_id))
    $name = $row['first_name'] . " " . $row['last_name'];
 }
 
-?>
+?>  
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -21,9 +21,9 @@ if($obj->get_student_details_from_id($student_id))
          <span class="sr-only">Toggle navigation</span>
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
+         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="index.php">The Advisory System</a>  
+      <a class="navbar-brand" href="index.php">The Advisory System</a>   
    </div>
    <!-- Top Menu Items -->
    <ul class="nav navbar-right top-nav">  

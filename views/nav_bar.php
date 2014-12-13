@@ -6,8 +6,8 @@ if (isset($_SESSION['faculty_id'])) {
 
    $advisor_id = $_SESSION['faculty_id'];
    $advisor_name = $_SESSION['username'];
-}
-?>
+}  
+?>  
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
