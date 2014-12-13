@@ -43,13 +43,13 @@ if (isset($_SESSION['faculty_id'])) {
    <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav bs-docs-sidebar" id="sidebar">
          <li class="active">
-            <a href="provost_home.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <a href="hod_home.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
          </li>
          <li>
-            <a href="provost_home.php"><i class="fa fa-fw fa-wrench"></i> Advisors & Advisees</a>
+            <a href="hod_home.php"><i class="fa fa-fw fa-wrench"></i> Advisors & Advisees</a>
          </li>
          <li>
-            <a href="provost_assign.php#"><i class="fa fa-fw fa-edit"></i> Assign Students</a>
+            <a href="view_reports.php"><i class="fa fa-fw fa-edit"></i> View Reports</a>
          </li>
          <!--         <li>
                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>

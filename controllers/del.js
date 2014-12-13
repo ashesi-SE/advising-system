@@ -31,6 +31,7 @@ function login() {
 function login_faculty() {
    var user = document.getElementById("username").value;
    var pass = document.getElementById("password").value;
+   debugger;
    var u = "action_advisor.php?cmd=1&user=" + user + "&pass=" + pass;
 //   prompt("r.user", u);
    r = syncAjax(u);
