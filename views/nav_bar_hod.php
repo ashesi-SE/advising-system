@@ -49,7 +49,10 @@ if (isset($_SESSION['faculty_id'])) {
             <a href="hod_home.php"><i class="fa fa-fw fa-wrench"></i> Advisors & Advisees</a>
          </li>
          <li>
-            <a href="view_reports.php"><i class="fa fa-fw fa-edit"></i> View Reports</a>
+            <a href="hod_view_reports.php"><i class="fa fa-fw fa-edit"></i> View Reports</a>
+         </li>
+         <li>
+            <a href="hod_send_reports.php"><i class="fa fa-fw fa-edit"></i> Send Report</a>
          </li>
          <!--         <li>
                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>

@@ -49,7 +49,10 @@ if (isset($_SESSION['faculty_id'])) {
             <a href="provost_home.php"><i class="fa fa-fw fa-wrench"></i> Advisors & Advisees</a>
          </li>
          <li>
-            <a href="provost_assign.php#"><i class="fa fa-fw fa-edit"></i> Assign Students</a>
+            <a href="provost_assign.php"><i class="fa fa-fw fa-edit"></i> Assign Students</a>
+         </li>
+         <li>
+            <a href="view_reports_from_hod.php"><i class="fa fa-fw fa-edit"></i> View Reports</a>
          </li>
          <!--         <li>
                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>
