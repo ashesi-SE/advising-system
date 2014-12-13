@@ -12,7 +12,7 @@ $row = $obj->fetch();
 if($row)
 {
    $student_has_advisor_id = $row['student_has_advisor_id']; 
-}    
+}      
 
 ?>
 <html lang="en">

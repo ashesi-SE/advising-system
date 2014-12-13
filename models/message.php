@@ -45,6 +45,13 @@ class message extends adb{
                     $query="Insert into messages (message,student_has_advisor_id, recepient, date_created) values ('$message', $student_has_advisor_id,'student',now())";  
 //                    print $query;
 			return $this->query($query);  
+                } 
+                
+                function get_messages_to_student_by_id($id)
+                {
+                    $query="Select * from messages where student_has_advisor_id = $id and recepient = 'student'";  
+
+			return $this->query($query); 
                 }  
                 
 //                function add_programmer($firstname,$lastname,$othernames,$cid,$cvid,$email,$phonenumber,$qualifications)
