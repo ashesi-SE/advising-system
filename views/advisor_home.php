@@ -40,7 +40,10 @@
 
          <!-- Navigation -->
          <?php
+        
          include_once './nav_bar.php';
+          $advisor_id = $_SESSION['faculty_id'];
+          echo "<script>console.log($advisor_id)</script>";
          ?>
 
          <div id="page-wrapper">
@@ -65,7 +68,7 @@
 
 
                <div class="row">
-                  <div class="col-lg-6 col-md-6">
+                  <div class="col-lg-12 col-md-12">
                      <div class="panel panel-red">
                         <div class="panel-body">
                            <div class="table-responsive">
@@ -84,178 +87,40 @@
                                        <td>
                                           <!--<div class='col-sm-6'>-->
                                           <div class="form-group">
-                                             <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" />
+                                             <div class='input-group date datetimepicker1'>
+                                                <input type='text' class="form-control" id="date_info"/>
+                                                
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
+
                                              </div>
+
                                           </div>
+                                           
                                           <!--</div>-->
                                        </td>
+                                         <input type='hidden' value='<?php echo $advisor_id ?>' id="faculty_id">
                                        <!--<td><input type="checkbox" id="freedate_select1"/></td>-->
                                        <!--<td>$23.71</td>-->
                                     </tr>
-                                    <tr>
-                                       <td>3322</td>
-                                       <td>
-                                          <div class="form-group">
-                                             <div class='input-group date' id='datetimepicker2'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                             </div>
-                                          </div>
-                                       </td>
-                                       <!--<td><input type="checkbox" id="freedate_select2"/></td>-->
-                                       <!--<td>$8345.23</td>-->
-                                    </tr>
-                                    <tr>
-                                       <td>3321</td>
-                                       <td>
-                                          <div class="form-group">
-                                             <div class='input-group date' id='datetimepicker3'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                             </div>
-                                          </div>
-                                       </td>
-                                       <!--<td><input type="checkbox" id="freedate_select3"/></td>-->
-                                        <!--<td>$245.12</td>-->
-                                    </tr>
+                                   
+                                  
                                  </tbody>
                               </table>
                            </div>
-                           <!--                           <div class="text-right">
-                                                         <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                                      </div>-->
+                         
                         </div>
-                        <a href="#">
+                        <a href="javascript:void(0)" onClick="save_free_time()">
                            <div class="panel-footer">
-                              <span class="pull-left">View Details</span>
-                              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                              <span class="pull-left">Add</span>
+                              <span class="pull-right"><i class="fa fa-plus-circle"></i></span>
                               <div class="clearfix"></div>
                            </div>
                         </a>
                      </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                     <div class="panel panel-red">
-                        <div class="panel-body">
-                           <div class="table-responsive">
-                              <table class="table table-bordered table-hover table-striped" id="dataTables-example1">  
-                                 <thead>
-                                    <tr>
-                                       <th> #</th>
-                                       <th> Free Date</th>
-                                       <!--<th> Select</th>-->
-                                       <!--<th>Amount (USD)</th>-->
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr>
-                                       <td>3323</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          <div class="form-group">
-                                             <div class='input-group date' id='datetimepicker4'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                             </div>
-                                          </div>
-                                          <!--</div>-->
-                                       </td>
-                                       <!--<td><input type="checkbox" id="freedate_select1"/></td>-->
-                                       <!--<td>$23.71</td>-->
-                                    </tr>
-                                    <tr>
-                                       <td>3322</td>
-                                       <td>
-                                          <div class="form-group">
-                                             <div class='input-group date' id='datetimepicker5'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                             </div>
-                                          </div>
-                                       </td>
-                                       <!--<td><input type="checkbox" id="freedate_select2"/></td>-->
-                                       <!--<td>$8345.23</td>-->
-                                    </tr>
-                                    <tr>
-                                       <td>3321</td>
-                                       <td>
-                                          <div class="form-group">
-                                             <div class='input-group date' id='datetimepicker6'>
-                                                <input type='text' class="form-control" />
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                </span>
-                                             </div>
-                                          </div>
-                                       </td>
-                                       <!--<td><input type="checkbox" id="freedate_select3"/></td>-->
-                                        <!--<td>$245.12</td>-->
-                                    </tr>
-                                 </tbody>
-                              </table>
-                           </div>
-                           <!--                           <div class="text-right">
-                                                         <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                                      </div>-->
-                        </div>
-                        <a href="#">
-                           <div class="panel-footer">
-                              <span class="pull-left">View Details</span>
-                              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                              <div class="clearfix"></div>
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-                  <!--                  <div class="col-lg-3 col-md-6">
-                                       <div class="panel panel-yellow">
-                                          <div class="panel-heading">
-                                             <div class="row">
-                                                <div class="col-xs-3">
-                                                   <i class="fa fa-shopping-cart fa-5x"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-right">
-                                                   <div class="huge">124</div>
-                                                   <div>New Orders!</div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <a href="#">
-                                             <div class="panel-footer">
-                                                <span class="pull-left">View Details</span>
-                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                                <div class="clearfix"></div>
-                                             </div>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                       <div class="panel panel-red">
-                                          <div class="panel-heading">
-                                             <div class="row">
-                                                <div class="col-xs-3">
-                                                   <i class="fa fa-support fa-5x"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-right">
-                                                   <div class="huge">13</div>
-                                                   <div>Support Tickets!</div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <a href="#">
-                                             <div class="panel-footer">
-                                                <span class="pull-left">View Details</span>
-                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                                <div class="clearfix"></div>
-                                             </div>
-                                          </a>
-                                       </div>-->
+                    
+                  
+                 
                </div>
 
 
@@ -263,9 +128,9 @@
                   <div class="col-lg-12">
 
 
-                     <div class="embed-responsive embed-responsive-4by3 col-sm-8 col-sm-offset-1">
+                   <div class="embed-responsive embed-responsive-4by3 col-sm-8 col-sm-offset-1">
                         <iframe src="https://www.google.com/calendar/embed?height=450&amp;wkst=1&amp;bgcolor=%23cccccc&amp;src=bcj7o45ohqnvmdf5vd0esq94n4%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=Africa%2FAccra" style=" border-width:0 " width="600" height="400" frameborder="0" scrolling="no"></iframe>
-                     </div>
+                     </div> 
 
                   </div>
                </div>
@@ -280,6 +145,7 @@
 
       </div>
       <!-- /#wrapper -->
+
 
 
    </body>
@@ -311,6 +177,7 @@
    <script src="js/plugins/morris/morris.min.js"></script>
    <script src="js/plugins/morris/morris-data.js"></script>-->
    <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+   <script src="../controllers/advisor.js"></script>
 
 
 
@@ -325,13 +192,42 @@
 
       $(function () {
 //            debugger
-         $('#datetimepicker1').datetimepicker();
-         $('#datetimepicker2').datetimepicker();
-         $('#datetimepicker3').datetimepicker();
-         $('#datetimepicker4').datetimepicker();
-         $('#datetimepicker5').datetimepicker();
-         $('#datetimepicker6').datetimepicker();
+         $('.datetimepicker1').datetimepicker();
+         
       });
+      $(function() {
+          $( ".datetimepicker1" ).each(function() {
+              $( this ).datetimepicker();
+          });
+      });
+      $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+   
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box incrementclass="remove_field">Remove</a>
+            $(wrapper).append('<div class="input-group date datetimepicker1">'+
+                                                               '<input type="text" class="form-control" id="date_info"/>'+
+                                                              '<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>'+
+                                                               '</span>'+
+                                                            '</div>'
+                              ); //add input box
+        }
+    });
+   
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+
+     
+
+     
+     
    </script>
 
 

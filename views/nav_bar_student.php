@@ -1,5 +1,12 @@
 <?php
-$advisor_id = 1;
+session_start();
+
+$student_id = 0;
+if (isset($_SESSION['student_id'])) {
+
+   $advisor_id = $_SESSION['student_id'];
+   $advisor_name = $_SESSION['username'];
+}
 ?>
 
 <!-- Navigation -->

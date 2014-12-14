@@ -202,6 +202,7 @@
                               <span class="badge"><?php
                                  if (isset($_REQUEST['student_name'])) {
                                     print $_REQUEST['student_name'];
+                                    $student_id = $_REQUEST['student_id'];
                                  }
                                  ?></span>
                               <i class="fa fa-fw fa-calendar"></i> Name
@@ -296,23 +297,23 @@
                      <div class="panel-body">
                         <ul>
                            <li>
+                              
                               <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Current Courses <i class="fa fa-fw fa-caret-down"></i></a>
                               <ul id="demo1" class="collapse">
-                                 <li>
-                                    <a href="#"> Math</a>
-                                 </li>
-                                 <li>
-                                    <a href="#"> Phy</a>
-                                 </li>
-                                 <li>
-                                    <a href="#"> Chem</a>
-                                 </li>
-                                 <li>
-                                    <a href="#"> Bio</a>
-                                 </li>
-                                 <li>
-                                    <a href="#"> Geo</a>
-                                 </li>
+                                <?php
+//                        
+                                 include_once '../models/student_class.php';
+                                 $adv_obj = new student_class();
+                                 if ($adv_obj->get_student_courses($student_id)) {
+                                    $row = $adv_obj->fetch();
+
+                                    while ($row) {
+
+                                       print "<li><a href='#''>" ."".$row["course_name"] . "</a></li>";
+                                       $row = $adv_obj->fetch();
+                                    }
+                                 }
+                                 ?>
                               </ul>
                            </li>
                         </ul>
