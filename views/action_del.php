@@ -35,6 +35,7 @@ switch ($cmd) {
    case 8:
       login_facutly();
       break;
+   
 
    default:
       echo "{";
@@ -358,3 +359,4 @@ function get_sessions() {
    echo jsons("message", "error, no record retrieved");
    echo "}";
 }
+
