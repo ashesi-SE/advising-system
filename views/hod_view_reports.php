@@ -71,8 +71,8 @@
                               <table class="table table-bordered table-hover table-striped" id="dataTables-example">  
                                  <thead>
                                     <tr>
-                                       <th> Report</th>
                                        <th> Faculty</th>
+                                       <th> Report</th>
                                        <th> Date Sent</th>
                                        <!--<th>Amount (USD)</th>-->
                                     </tr>
@@ -91,7 +91,7 @@
                                              print("<td><a href='../advisor_uploads/$row[path]'>" . $row['path'] . "</a></td>");
                                              print("<td>" . $row['date_created'] . "</td></tr>");
 
-                                             $row = $getfiles_obj->fetch();
+                                             $row = $getReports->fetch();
                                           }
                                        }
                                        ?>

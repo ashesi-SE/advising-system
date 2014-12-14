@@ -71,8 +71,8 @@
                               <table class="table table-bordered table-hover table-striped" id="dataTables-example">  
                                  <thead>
                                     <tr>
-                                       <th> Report</th>
                                        <th> Faculty</th>
+                                       <th> Report</th>
                                        <th> Date Sent</th>
                                        <!--<th>Amount (USD)</th>-->
                                     </tr>

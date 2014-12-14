@@ -71,14 +71,26 @@ if (isset($_SESSION['faculty_id'])) {
                </div>
 
                <div class="row">
-                  <div class="col-lg-12 col-md-6">
-                     Send Report
-
-                     <form action="upload.php" method="post" enctype="multipart/form-data"> 
-                        <input class="btn btn-danger" type="file" name="myFile">
-                        <br>
-                        <input class="btn btn-success" type="submit" value="Upload">
-                     </form>
+                   <div class="col-lg-6 col-md-6 col-lg-offset-3">
+                     <div class="panel panel-danger">
+                        <div class="panel-heading">
+                           <div class="row">
+                              <div class="col-xs-3">
+                                 <i class="fa fa-tasks fa-5x"></i>
+                              </div>
+                              <div class="col-xs-9 text-right">
+                                 <div class="huge">Send Report</div>
+                                 <!--<div>Messages</div>-->
+                              </div>
+                           </div>
+                        </div>
+                        
+                           <div class="panel-footer">
+                               <form action="upload.php" method="post" enctype="multipart/form-data"> 
+                                  <input class="btn btn-danger" type="file" name="myFile">
+                                  <br>
+                                  <input class="btn btn-success" type="submit" value="Upload">
+                               </form>
 
                      <?php
                      if (isset($_REQUEST['wtv'])) {
@@ -91,7 +103,14 @@ if (isset($_SESSION['faculty_id'])) {
                         print("Uploaded");
                      }
                      ?>
+                                        
+                              </div>
+                              
+                           </div>
+                        
+                     </div>
                   </div>
+                  
                </div>
 
 

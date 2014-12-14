@@ -95,7 +95,7 @@ if (isset($_SESSION['faculty_id'])) {
                         include_once '../models/advisor_upload_class.php';
                         
                         $obj = new advisor_upload_class();
-                        $obj->add_report_from_advisor($faculty_id, $_REQUEST['path']);
+                        $obj->add_report_from_advisor($advisor_id, $_REQUEST['path']);
                         
                         print("Uploaded");
                      }
