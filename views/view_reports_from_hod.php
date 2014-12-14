@@ -286,7 +286,7 @@
    <script src="js/plugins/morris/morris-data.js"></script>-->
    <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 
-   <script src="js/student_class.js" type="text/javascript"></script>
+   <!--<script src="js/student_class.js" type="text/javascript"></script>-->
 
    <script src="js/del.js" type="text/javascript"></script>
 
