@@ -1,3 +1,10 @@
+<?php
+$faculty_id = 0;
+
+if (isset($_SESSION['faculty_id'])) {
+   $faculty_id = $_SESSION['faculty_id'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -8,7 +15,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
 
-      <title>Advisory System</title>
+      <title>Advisor | Reports</title>
 
       <!-- Bootstrap Core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -76,13 +83,26 @@
                         
                            <div class="panel-footer">
                                <div>
-                                      
-                                  <input type="file" id="report" >
+                                      <form action="advisor_upload.php" method="post" enctype="multipart/form-data"> 
+                                        <input class="btn btn-primary" type="file" name="myFile">
+                                        <br>
+                                        <input class="btn btn-success" type="submit" value="Upload">
+                                      </form>
+
+                     <?php
+                     if (isset($_REQUEST['wtv'])) {
+                        
+                        include_once '../models/advisor_upload_class.php';
+                        
+                        $obj = new advisor_upload_class();
+                        $obj->add_report_from_advisor($faculty_id, $_REQUEST['path']);
+                        
+                        print("Uploaded");
+                     }
+                     ?>
                                         
                               </div>
-                              <span class="pull-right"><a href="#">Send</a></span>
-                              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                              <div class="clearfix"></div>
+                              
                            </div>
                         
                      </div>
