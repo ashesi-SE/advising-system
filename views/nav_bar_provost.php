@@ -29,11 +29,11 @@ if (isset($_SESSION['faculty_id'])) {
          <ul class="dropdown-menu">
             <!--            <li class="divider"></li>-->
             <li>
-               <a href="index.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+               <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
             </li>
          </ul>
       </li>
-      <li><a href="index.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
+      <li><a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
    </ul>
 
    <!--////////////////////////////////////////////////////////////////////////////////////////////

@@ -23,8 +23,19 @@ class uploader_class extends adb {
 
    function files() {
 
-      $query = "select * from upload left join faculty on faculty.faculty_id = upload.faculty_id order by Date(date_created) desc";
-//                            print $query;  
+      $query = "SELECT * 
+FROM upload
+LEFT JOIN faculty ON faculty.faculty_id = upload.faculty_id
+ORDER BY (
+date_created
+) DESC 
+LIMIT 0 , 30";
+
+//      SELECT * 
+//FROM upload
+//LEFT JOIN faculty ON faculty.faculty_id = upload.faculty_id
+//ORDER BY  `upload`.`date_created` DESC
+//      print $query;
       return $this->query($query);
    }
 
