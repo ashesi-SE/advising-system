@@ -30,8 +30,4 @@ Advising-System
 #### Track our work flow here
 ###### https://waffle.io/ashesi-se/advising-system
 
-#### First Demo
-###### Student is able to log in and schedule meeting time with advisor.
-
-#### Next up
-###### Pilot plan
+###### Have Fun!
