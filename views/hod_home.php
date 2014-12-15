@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
 <!DOCTYPE html>
 <html lang="en">
 
@@ -337,6 +340,7 @@
 
 
 </html>
+<<<<<<< HEAD
 =======
 <!DOCTYPE html>
 <html lang="en">
@@ -677,3 +681,5 @@
 
 </html>
 >>>>>>> origin/messages_plus_hod
+=======
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817

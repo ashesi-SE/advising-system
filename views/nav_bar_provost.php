@@ -69,10 +69,14 @@ if (isset($_SESSION['faculty_id'])) {
             while ($row) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] ."&student_id=".$row['student_id']. "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
 =======
                print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
 >>>>>>> origin/messages_plus_hod
+=======
+               print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] ."&student_id=".$row['student_id']. "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
                print $row["first_name"] . " " . $row["last_name"];
                print"</a>" . "</li>";
 

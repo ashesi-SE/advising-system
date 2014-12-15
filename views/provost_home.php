@@ -80,6 +80,9 @@
                                  <tbody>
                                     <tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
                                       <?php
                              
                                        include_once '../models/student_has_advisor_class.php';
@@ -96,6 +99,7 @@
                                              $row = $prov_obj->fetch();
                                           }
                                        }
+<<<<<<< HEAD
 =======
                                        <?php
 //                                       include_once '';
@@ -126,12 +130,15 @@
                                        <?php
 //                                       include_once '';
 >>>>>>> origin/messages_plus_hod
+=======
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
                                        ?>
 
 
                                        <td>Ayorkor Korsah</td>
                                        <td>
                                           <!--<div class='col-sm-6'>-->
+<<<<<<< HEAD
 <<<<<<< HEAD
                                           Martha Kumi
                                           <!--</div>-->
@@ -167,6 +174,11 @@
                                           <!--</div>-->
                                        </td>
 >>>>>>> origin/messages_plus_hod
+=======
+                                          Martha Kumi
+                                          <!--</div>-->
+                                       </td>
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
                                     </tr>
                                     
                                    
@@ -186,6 +198,7 @@
                         </a>
                      </div>
                   </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                  
 =======
@@ -307,6 +320,9 @@
                                           </a>
                                        </div>-->
 >>>>>>> origin/messages_plus_hod
+=======
+                 
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
                </div>
 
 

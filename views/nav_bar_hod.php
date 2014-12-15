@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
 <?php
 session_start();
 
@@ -79,6 +82,7 @@ if (isset($_SESSION['faculty_id'])) {
       </ul>
    </div>
    <!-- /.navbar-collapse -->
+<<<<<<< HEAD
 =======
 <?php
 session_start();
@@ -164,4 +168,6 @@ if (isset($_SESSION['faculty_id'])) {
    </div>
    <!-- /.navbar-collapse -->
 >>>>>>> origin/messages_plus_hod
+=======
+>>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
 </nav>
