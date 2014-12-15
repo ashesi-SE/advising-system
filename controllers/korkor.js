@@ -15,7 +15,7 @@ function syncAjax(u) {
 
 function send_message_to_student(student_has_advisor_id)
 {
-   alert ("this is the student has advisor id " + student_has_advisor_id);
+//   alert ("this is the student has advisor id " + student_has_advisor_id);
    var message = document.getElementById("message_student").value;
    var u = "action_korkor.php?cmd=4&id="+student_has_advisor_id +"&message=" + message;
    var r = syncAjax(u);      
@@ -38,9 +38,9 @@ function showAllMessages()
 function send_meeting(id)
 {
     var message = document.getElementById("message").value;
-    alert("message to advisor");  
+//    alert("message to advisor");  
     var u = "action_korkor.php?cmd=3&id="+id +"&message=" + message;
-    prompt("u", u);
+//    prompt("u", u);
     var r = syncAjax(u);      
     
     if(r.result === 1)

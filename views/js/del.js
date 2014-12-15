@@ -42,6 +42,10 @@ $(document).ready(function () {
 //   }
 });
 
+function alerter() {
+   alert("saved");
+}
+
 //   source http://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
 function split(a, n) {
    var len = a.length, out = [], i = 0;
@@ -73,7 +77,7 @@ function assign_students() {
    var u2 = "action_del.php?cmd=3&user=" + user + "&pass=" + pass;
 //   prompt("url", u2);
    advisors = syncAjax(u2);
-   
+
    var u3 = "action_del.php?cmd=10&user=" + user + "&pass=" + pass;
    prompt("url", u3);
    syncAjax(u3);
