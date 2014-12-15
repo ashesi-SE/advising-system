@@ -65,7 +65,53 @@
 
                <div class="row">
                   <div class="col-lg-12 col-md-6">
-                     
+                     <div class="panel panel-red">
+                        <div class="panel-body">
+                           <div class="table-responsive">
+                              <table class="table table-bordered table-hover table-striped" id="dataTables-example">  
+                                 <thead>
+                                    <tr>
+                                       <th> Faculty</th>
+                                       <th> Report</th>
+                                       <th> Date Sent</th>
+                                       <!--<th>Amount (USD)</th>-->
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <?php
+                                       include_once '../models/advisor_upload_class.php';
+                                       $getReports = new advisor_upload_class();
+                                       if ($getReports->advisor_reports()) {
+                                          $row = $getReports->fetch();
+
+                                          while ($row) {
+
+                                             print("<tr><td>" . $row['first_name'] . " " . $row['last_name'] . "</td>");
+                                             print("<td><a href='../advisor_uploads/$row[path]'>" . $row['path'] . "</a></td>");
+                                             print("<td>" . $row['date_created'] . "</td></tr>");
+
+                                             $row = $getReports->fetch();
+                                          }
+                                       }
+                                       ?>
+
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <!--                           <div class="text-right">
+                                                         <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                                                      </div>-->
+                        </div>
+                        <a href="#">
+                           <div class="panel-footer">
+                              <span class="pull-left">View Details</span>
+                              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                              <div class="clearfix"></div>
+                           </div>
+                        </a>
+                     </div>
                   </div>
                </div>
 
