@@ -16,7 +16,7 @@ Advising-System
 
 
 #### Wiki
-###### Here is a link to our wiki page: https://github.com/ashesi-SE/advising-system/wiki
+###### Here is a link to our wiki home page: https://github.com/ashesi-SE/advising-system/wiki
 
 
 #### Cloning the project
@@ -30,8 +30,4 @@ Advising-System
 #### Track our work flow here
 ###### https://waffle.io/ashesi-se/advising-system
 
-#### First Demo
-###### Student is able to log in and schedule meeting time with advisor.
 
-#### Next up
-###### Pilot plan
