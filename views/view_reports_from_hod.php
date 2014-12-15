@@ -42,7 +42,7 @@
          include_once './nav_bar_provost.php';
          ?>
 
-        <div id="page-wrapper">
+         <div id="page-wrapper">
 
             <div class="container-fluid">
 
@@ -71,105 +71,32 @@
                               <table class="table table-bordered table-hover table-striped" id="dataTables-example">  
                                  <thead>
                                     <tr>
-                                       <th> Advisor</th>
-                                       <th> Student</th>
-                                       <!--<th> Select</th>-->
+                                       <th> Report</th>
+                                       <th> Faculty</th>
+                                       <th> Date Sent</th>
                                        <!--<th>Amount (USD)</th>-->
                                     </tr>
                                  </thead>
                                  <tbody>
                                     <tr>
-<<<<<<< HEAD
-                                      <?php
-                             
-                                       include_once '../models/student_has_advisor_class.php';
-                                       $prov_obj = new student_has_advisor_class();
-                                       if ($prov_obj->get_assigned_list()) {
-                                          $row = $prov_obj->fetch();
+                                       <?php
+                                       include_once '../models/uploader_class.php';
+                                       $getfiles_obj = new uploader_class();
+                                       if ($getfiles_obj->files()) {
+                                          $row = $getfiles_obj->fetch();
 
                                           while ($row) {
 
-                                             print "<tr><td>".$row["f_firstname"] . " " . $row["f_lastname"]."</td>";
-                                             print"<td>".$row["s_firstname"] . " " . $row["s_lastname"] . "</td></tr>";
+                                             print("<tr><td>" . $row['first_name'] . " " . $row['last_name'] . "</td>");
+                                             print("<td><a href='../uploads/$row[path]'>" . $row['path'] . "</a></td>");
+                                             print("<td>" . $row['date_created'] . "</td></tr>");
 
-
-                                             $row = $prov_obj->fetch();
+                                             $row = $getfiles_obj->fetch();
                                           }
                                        }
-=======
-                                       <?php
-//                                       include_once '';
                                        ?>
 
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Martha Kumi
-                                          <!--</div>-->
-                                       </td>
                                     </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Margaret Kumi
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
->>>>>>> origin/messages_plus_hod
-                                       ?>
-
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-<<<<<<< HEAD
-                                          Martha Kumi
-                                          <!--</div>-->
-                                       </td>
-=======
-                                          Fiifi Baako
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Philip Black
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Nii Apa 
-                                          <!--</div>-->
-                                       </td>
->>>>>>> origin/messages_plus_hod
-                                    </tr>
-                                    
-                                   
                                  </tbody>
                               </table>
                            </div>
@@ -186,9 +113,6 @@
                         </a>
                      </div>
                   </div>
-<<<<<<< HEAD
-                 
-=======
                   <!--                  <div class="col-lg-6 col-md-6">
                                        <div class="panel panel-red">
                                           <div class="panel-body">
@@ -306,7 +230,6 @@
                                              </div>
                                           </a>
                                        </div>-->
->>>>>>> origin/messages_plus_hod
                </div>
 
 
@@ -363,7 +286,7 @@
    <script src="js/plugins/morris/morris-data.js"></script>-->
    <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 
-   <script src="js/student_class.js" type="text/javascript"></script>
+   <!--<script src="js/student_class.js" type="text/javascript"></script>-->
 
    <script src="js/del.js" type="text/javascript"></script>
 

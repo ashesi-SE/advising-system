@@ -1,5 +1,12 @@
 <?php
-$advisor_id = 1;
+session_start();
+
+$advisor_id = 0;
+if (isset($_SESSION['faculty_id'])) {
+
+   $advisor_id = $_SESSION['faculty_id'];
+   $advisor_name = $_SESSION['username'];
+}
 ?>
 
 <!-- Navigation -->
@@ -17,16 +24,16 @@ $advisor_id = 1;
    <!-- Top Menu Items -->
    <ul class="nav navbar-right top-nav">
       <li class="dropdown">
-         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php print($_SESSION['firstname'] . " " . $_SESSION['lastname']) ?> <b class="caret"></b></a>
 
          <ul class="dropdown-menu">
             <!--            <li class="divider"></li>-->
             <li>
-               <a href="index.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+               <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
             </li>
          </ul>
       </li>
-      <li><a href="index.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
+      <li><a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
    </ul>
 
    <!--////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,15 +46,18 @@ $advisor_id = 1;
             <a href="provost_home.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
          </li>
          <li>
-            <a href="provost_home.php"><i class="fa fa-fw fa-wrench"></i> View Reports</a>
+            <a href="provost_home.php"><i class="fa fa-fw fa-wrench"></i> Advisors & Advisees</a>
          </li>
          <li>
-            <a href="provost_assign.php#"><i class="fa fa-fw fa-edit"></i> Assign Students</a>
+            <a href="provost_assign.php"><i class="fa fa-fw fa-edit"></i> Assign Students</a>
          </li>
          <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
+            <a href="view_reports_from_hod.php"><i class="fa fa-fw fa-edit"></i> View Reports</a>
          </li>
+         <!--         <li>
+                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>
+                     <ul id="demo" class="collapse">
+                  </li>
          <?php
 //                        print "dafaf";
 //                        $advisor_id = 1;
@@ -58,7 +68,11 @@ $advisor_id = 1;
 
             while ($row) {
 
+<<<<<<< HEAD
                print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] ."&student_id=".$row['student_id']. "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+=======
+               print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
+>>>>>>> origin/messages_plus_hod
                print $row["first_name"] . " " . $row["last_name"];
                print"</a>" . "</li>";
 
@@ -66,8 +80,8 @@ $advisor_id = 1;
             }
          }
          ?>
-      </ul>
-      </li>
+               </ul>
+               </li>-->
       </ul>
    </div>
    <!-- /.navbar-collapse -->

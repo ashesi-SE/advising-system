@@ -15,7 +15,7 @@ class advisor_class extends adb {
    }
    
    function get_all_advisors(){
-      $query = "Select * from faculty";
+      $query = "Select * from faculty where role='faculty'";
 //                            print $query;  
       return $this->query($query);
    }

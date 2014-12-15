@@ -37,11 +37,39 @@ switch ($cmd) {
       break;
    
 
+   case 9:
+      login_provost();
+      break;
+
+   case 10:
+      delete();
+      break;
+
+   case 11:
+      login_hod();
+      break;
+
    default:
       echo "{";
       echo jsonn("result", 0) . ",";
       echo jsons("message", "unknown command");
       echo "}";
+}
+
+function delete() {
+   include_once '../models/student_has_advisor_class.php';
+   $obj = new student_has_advisor_class();
+   if (!$obj->delete()) {
+      echo "{";
+      echo jsonn("result", 0) . ",";
+      echo jsons("message", "Could not delete");
+      echo "}";
+      return;
+   }
+   echo "{";
+   echo jsonn("result", 1) . ",";
+   echo jsons("message", "Successful deletion");
+   echo "}";
 }
 
 function assign_students() {
@@ -293,6 +321,62 @@ function login() {
          echo jsons("username", $row["username"]) . ",";
 //         print_r($row);
          echo jsonn("student_id", $row["student_id"]);
+         echo "}";
+         print "}";
+      }return;
+   }
+   echo "{";
+   echo jsonn("result", 0) . ",";
+   echo jsons("message", "error, no record retrieved");
+   echo "}";
+}
+
+function login_provost() {
+   include_once '../models/login_class.php';
+   $user = get_data('user');
+   $pass = get_data('pass');
+   $p = new login_class();
+   $val = $p->loginProvost($user, $pass);
+   if ($val) {
+      $row = $p->loadProProfile($user);
+      if ($row) {
+         echo "{";
+         echo jsonn("result", 1);
+         echo ',"user":';
+         echo "{";
+         echo jsons("username", $row["username"]) . ",";
+         echo jsons("lastname", $row["last_name"]) . ",";
+         echo jsons("role", $row["role"]) . ",";
+//         print_r($row);
+         echo jsons("firstname", $row["first_name"]);
+         echo "}";
+         print "}";
+      }return;
+   }
+   echo "{";
+   echo jsonn("result", 0) . ",";
+   echo jsons("message", "error, no record retrieved");
+   echo "}";
+}
+
+function login_hod() {
+   include_once '../models/login_class.php';
+   $user = get_data('user');
+   $pass = get_data('pass');
+   $p = new login_class();
+   $val = $p->loginHOD($user, $pass);
+   if ($val) {
+      $row = $p->loadHODProfile($user);
+      if ($row) {
+         echo "{";
+         echo jsonn("result", 1);
+         echo ',"user":';
+         echo "{";
+         echo jsons("username", $row["username"]) . ",";
+         echo jsons("lastname", $row["last_name"]) . ",";
+         echo jsons("role", $row["role"]) . ",";
+//         print_r($row);
+         echo jsons("firstname", $row["first_name"]);
          echo "}";
          print "}";
       }return;
