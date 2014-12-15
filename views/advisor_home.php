@@ -78,7 +78,61 @@ $student_advisor_id = $row['student_has_advisor_id'];
 
 
                <div class="row">
-                  <div class="col-lg-12 col-md-12">
+                  <div class="col-lg-6 col-md-6">
+                     <div class="panel panel-red">
+                        <div class="panel-body">
+                           <div class="table-responsive">
+                              <table class="table table-bordered table-hover table-striped" id="dataTables-example">  
+                                 <thead>
+                                    <tr>
+                                       <th> #</th>
+                                       <th> Free Date</th>
+                                       <!--<th> Select</th>-->
+                                       <!--<th>Amount (USD)</th>-->
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>3323</td>
+                                       <td>
+                                          <!--<div class='col-sm-6'>-->
+                                          <div class="form-group">
+                                             <div class='input-group date datetimepicker1'>
+                                                <input type='text' class="form-control" id="date_info"/>
+                                                
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+
+                                             </div>
+
+                                          </div>
+                                           
+                                          <!--</div>-->
+                                       </td>
+                                         <input type='hidden' value='<?php echo $advisor_id ?>' id="faculty_id">
+                                       <!--<td><input type="checkbox" id="freedate_select1"/></td>-->
+                                       <!--<td>$23.71</td>-->
+                                    </tr>
+                                   
+                                  
+                                 </tbody>
+                              </table>
+                           </div>
+                         
+                        </div>
+                        <a href="javascript:void(0)" onClick="save_free_time()">
+                           <div class="panel-footer">
+                              <span class="pull-left">Add</span>
+                              <span class="pull-right"><i class="fa fa-plus-circle"></i></span>
+                              <div class="clearfix"></div>
+                           </div>
+                        </a>
+                     </div>
+                    
+                  
+                 
+               </div>
+               <div class="col-lg-6 col-md-6">
                      <div class="panel panel-red">
                         <div class="panel-body">
                            <div class="table-responsive">

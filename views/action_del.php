@@ -36,7 +36,7 @@ switch ($cmd) {
       login_facutly();
       break;
    
-<<<<<<< HEAD
+
 
    case 9:
       login_provost();
@@ -49,8 +49,7 @@ switch ($cmd) {
    case 11:
       login_hod();
       break;
-=======
->>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
+
 
    default:
       echo "{";

@@ -54,7 +54,7 @@ if (isset($_SESSION['faculty_id'])) {
          <li>
             <a href="view_reports_from_hod.php"><i class="fa fa-fw fa-edit"></i> View Reports</a>
          </li>
-         <!--         <li>
+                 <li>
                      <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Student List <i class="fa fa-fw fa-caret-down"></i></a>
                      <ul id="demo" class="collapse">
                   </li>
@@ -68,15 +68,12 @@ if (isset($_SESSION['faculty_id'])) {
 
             while ($row) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] ."&student_id=".$row['student_id']. "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
-=======
+
                print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] . "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
->>>>>>> origin/messages_plus_hod
-=======
+
                print "<li>" . "<a href='advisor_student_details.php?student_name=" . $row["first_name"] . " " . $row["last_name"] ."&student_id=".$row['student_id']. "'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
->>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
                print $row["first_name"] . " " . $row["last_name"];
                print"</a>" . "</li>";
 
@@ -85,7 +82,7 @@ if (isset($_SESSION['faculty_id'])) {
          }
          ?>
                </ul>
-               </li>-->
+               </li>
       </ul>
    </div>
    <!-- /.navbar-collapse -->

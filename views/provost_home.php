@@ -79,10 +79,7 @@
                                  </thead>
                                  <tbody>
                                     <tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
+
                                       <?php
                              
                                        include_once '../models/student_has_advisor_class.php';
@@ -99,88 +96,13 @@
                                              $row = $prov_obj->fetch();
                                           }
                                        }
-<<<<<<< HEAD
-=======
-                                       <?php
-//                                       include_once '';
+
+                                      
                                        ?>
 
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Martha Kumi
-                                          <!--</div>-->
-                                       </td>
+                                       
                                     </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Margaret Kumi
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
->>>>>>> origin/messages_plus_hod
-=======
->>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
-                                       ?>
-
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                          Martha Kumi
-                                          <!--</div>-->
-                                       </td>
-=======
-                                          Fiifi Baako
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Philip Black
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Nii Apa 
-                                          <!--</div>-->
-                                       </td>
->>>>>>> origin/messages_plus_hod
-=======
-                                          Martha Kumi
-                                          <!--</div>-->
-                                       </td>
->>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
-                                    </tr>
-                                    
+                                   
                                    
                                  </tbody>
                               </table>
@@ -198,131 +120,8 @@
                         </a>
                      </div>
                   </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                 
-=======
-                  <!--                  <div class="col-lg-6 col-md-6">
-                                       <div class="panel panel-red">
-                                          <div class="panel-body">
-                                             <div class="table-responsive">
-                                                <table class="table table-bordered table-hover table-striped" id="dataTables-example1">  
-                                                   <thead>
-                                                      <tr>
-                                                         <th> #</th>
-                                                         <th> Free Date</th>
-                                                         <th> Select</th>
-                                                         <th>Amount (USD)</th>
-                                                      </tr>
-                                                   </thead>
-                                                   <tbody>
-                                                      <tr>
-                                                         <td>3323</td>
-                                                         <td>
-                                                            <div class='col-sm-6'>
-                                                            <div class="form-group">
-                                                               <div class='input-group date' id='datetimepicker4'>
-                                                                  <input type='text' class="form-control" />
-                                                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                                  </span>
-                                                               </div>
-                                                            </div>
-                                                            </div>
-                                                         </td>
-                                                         <td><input type="checkbox" id="freedate_select1"/></td>
-                                                         <td>$23.71</td>
-                                                      </tr>
-                                                      <tr>
-                                                         <td>3322</td>
-                                                         <td>
-                                                            <div class="form-group">
-                                                               <div class='input-group date' id='datetimepicker5'>
-                                                                  <input type='text' class="form-control" />
-                                                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                                  </span>
-                                                               </div>
-                                                            </div>
-                                                         </td>
-                                                         <td><input type="checkbox" id="freedate_select2"/></td>
-                                                         <td>$8345.23</td>
-                                                      </tr>
-                                                      <tr>
-                                                         <td>3321</td>
-                                                         <td>
-                                                            <div class="form-group">
-                                                               <div class='input-group date' id='datetimepicker6'>
-                                                                  <input type='text' class="form-control" />
-                                                                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                                                  </span>
-                                                               </div>
-                                                            </div>
-                                                         </td>
-                                                         <td><input type="checkbox" id="freedate_select3"/></td>
-                                                          <td>$245.12</td>
-                                                      </tr>
-                                                   </tbody>
-                                                </table>
-                                             </div>
-                                                                        <div class="text-right">
-                                                                           <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                                                        </div>
-                                          </div>
-                                          <a href="#">
-                                             <div class="panel-footer">
-                                                <span class="pull-left">View Details</span>
-                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                                <div class="clearfix"></div>
-                                             </div>
-                                          </a>
-                                       </div>
-                                    </div>-->
-                  <!--                  <div class="col-lg-3 col-md-6">
-                                       <div class="panel panel-yellow">
-                                          <div class="panel-heading">
-                                             <div class="row">
-                                                <div class="col-xs-3">
-                                                   <i class="fa fa-shopping-cart fa-5x"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-right">
-                                                   <div class="huge">124</div>
-                                                   <div>New Orders!</div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <a href="#">
-                                             <div class="panel-footer">
-                                                <span class="pull-left">View Details</span>
-                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                                <div class="clearfix"></div>
-                                             </div>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6">
-                                       <div class="panel panel-red">
-                                          <div class="panel-heading">
-                                             <div class="row">
-                                                <div class="col-xs-3">
-                                                   <i class="fa fa-support fa-5x"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-right">
-                                                   <div class="huge">13</div>
-                                                   <div>Support Tickets!</div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <a href="#">
-                                             <div class="panel-footer">
-                                                <span class="pull-left">View Details</span>
-                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                                <div class="clearfix"></div>
-                                             </div>
-                                          </a>
-                                       </div>-->
->>>>>>> origin/messages_plus_hod
-=======
-                 
->>>>>>> 60f55b0fa66cdc4e78d246a9063614faf6eef817
+
+                  
                </div>
 
 

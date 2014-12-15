@@ -1,99 +1,4 @@
-<<<<<<< HEAD
-<?php
 
-include_once 'adb.php';
-
-/**
- * Description of advisor_class
- *
- * @author maltiti
- */
-class student_has_advisor_class extends adb {
-
-   //put your code here
-   function student_has_advisor_class() {
-      adb::adb();
-   }
-   
-   function delete(){
-      $query2 = "delete from student_has_advisor";
-
-      return $this->query($query2);
-   }
-
-   function assign_student_to_advisor($student_id, $advisor_id) {
-
-      
-
-      $query = "Insert into student_has_advisor(faculty_faculty_id, student_id) values($advisor_id,$student_id)";
-//                            print $query;  
-      return $this->query($query);
-   }
-
-   function get_all_advisors() {
-      $query = "Select * from faculty";
-//                            print $query;  
-      return $this->query($query);
-   }
-
-   function all_advisees() {
-      $query = "Select * from student inner join faculty on student.student_has_id=faculty.student_has_id";
-//                            print $query;  
-      return $this->query($query);
-   }
-
-   function set_available_time($id, $date) {
-      $query = "Insert into advisor_free_times(dates_available,faculty_id) values ($date,$id)";
-//                            print $query;  
-      return $this->query($query);
-   }
-
-   function get_notes_per_session($student_id) {
-      $query = "Select * from (student,messages) "
-              . "join session on session.student_has_id=messages.student_has_id and session.student_has_id=student.student_has_id where student.student_id=$student_id";
-//                            print $query;  
-      return $this->query($query);
-   }
-
-   /**
-    * Get advisees for a particular advisor
-    * @param type $advisor_id
-    */
-   function get_advisees($advisor_id) {
-      $query = "Select * from student_has_advisor left join student on student_has_advisor.student_id = student.student_id where faculty_faculty_id = $advisor_id";
-
-      return $this->query($query);
-   }
-   function get_assigned_list() {
-      $query = "Select student.first_name AS s_firstname,student.last_name AS s_lastname,faculty.first_name AS f_firstname,faculty.last_name AS f_lastname from (student,faculty)  join student_has_advisor on student_has_advisor.student_id = student.student_id and student_has_advisor.faculty_faculty_id =faculty.faculty_id";
-
-      return $this->query($query);
-   }
-
-
-//   function get_student_has_advisor_id_by_student_id($id)
-//   {
-//       $query = "Select * from student_has_advisor where student_id =$id";
-////       print $query;
-//       return $this->query($query);  
-//   }
-}
-
-//$advisor_id = 1;
-//include_once '../models/advisor_class.php';
-//$adv_obj = new advisor_class();
-//if ($adv_obj->get_advisees($advisor_id)) {
-//   $row = $adv_obj->fetch();
-//
-//   while ($row) {
-//
-//      print "<li>" . "<a href='#'>" . "<i class='fa fa-fw fa-bar-chart-o'></i>";
-//      print $row["first_name"] . " " . $row["last_name"];
-//      print"</a>" . "</li>";
-//
-//      $row = $adv_obj->fetch();
-//   }
-=======
 <?php
 
 include_once 'adb.php';
@@ -173,6 +78,11 @@ class student_has_advisor_class extends adb {
 
       return $this->query($query);    
    }
+   function get_assigned_list() {
+      $query = "Select student.first_name AS s_firstname,student.last_name AS s_lastname,faculty.first_name AS f_firstname,faculty.last_name AS f_lastname from (student,faculty)  join student_has_advisor on student_has_advisor.student_id = student.student_id and student_has_advisor.faculty_faculty_id =faculty.faculty_id";
+
+      return $this->query($query);
+   }
 
 //   function get_student_has_advisor_id_by_student_id($id)
 //   {
@@ -196,5 +106,5 @@ class student_has_advisor_class extends adb {
 //
 //      $row = $adv_obj->fetch();
 //   }
->>>>>>> origin/messages_plus_hod
+
 //}
