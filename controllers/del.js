@@ -20,10 +20,25 @@ function login() {
 
 //                alert(r.result);
    if (r.result === 1) { // signifies manager
-      window.open("schedule.php", "_self");
+      window.open("student_view.php", "_self");
    }
-   else if (r.result === 2) { // signifies player
-      window.open("player_profile.php", "_self");
+   else {
+      alert("username or password wrong");
+      return;
+   }
+}
+
+function login_faculty() {
+   var user = document.getElementById("username").value;
+   var pass = document.getElementById("password").value;
+   var u = "action_advisor.php?cmd=1&user=" + user + "&pass=" + pass;
+//   prompt("r.user", u);
+   r = syncAjax(u);
+//   prompt(r.user);
+
+//                alert(r.result);
+   if (r.result === 1) { // signifies manager
+      window.open("advisor_home.php", "_self");
    }
    else {
       alert("username or password wrong");

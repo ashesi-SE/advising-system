@@ -1,0 +1,14 @@
+/* make sidebar srollable */
+/*.bs-docs-sidebar > ul {
+    overflow-y: auto;
+    height: 100%;
+    padding-top: 20px;
+}*/
+
+/*#sidebar.affix {
+    top: 20px;
+}*/
+
+.side-nav {
+   max-height: 100%;
+}

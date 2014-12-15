@@ -5,11 +5,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Log In</title>
       <link href="../views/css/bootstrap.css" rel="stylesheet">
-      <link href="../views/css/fonts/FontAwesome/font-awesome-4.0.3.min.css" rel="stylesheet">
-      <link href="../views/css/style.css" rel="stylesheet">
+      <!--<link href="../views/css/fonts/FontAwesome/font-awesome-4.0.3.min.css" rel="stylesheet">-->
+      <!--<link href="../views/css/style.css" rel="stylesheet">-->
    </head>
    <body>
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-inverse" role="navigation">
          <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -19,19 +19,19 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="#">Advisory System</a>
+               <a class="navbar-brand" href="#"> Advisory System</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <!--<li class="active"><a href="#">Home</a></li>-->
+                  <!--<li><a href="#">Contact</a></li>-->
 
                </ul>
 
                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">Register</a></li>
+                  <!--<li><a href="#">Register</a></li>-->
                   <!--  <li>
                      <a href="#">Login</span></a>
                     
@@ -63,7 +63,8 @@
                         <div class="checkbox">
                            <input type="checkbox">
                            <label>Remember Me</label>
-                           <a href="#"><input type="submit" value="Log in" class="btn btn-default btn-sm" onclick="login()"/></a>
+                           <a href="#"><input type="submit" value="Log in as Student" class="btn btn-default btn-sm" onclick="login()"/></a> 
+                           <a href="#"><input type="button" value="Log in as Faculty" class="btn btn-default btn-sm" onclick="login_faculty()"/></a>
 
                         </div>
                      </div>
@@ -95,6 +96,6 @@
    </footer>
 
    <script src="../views/js/jquery-1.11.0.js"></script>
-   <script src="../views/js/bootstrap.min.js"></script>
+   <!--<script src="../views/js/bootstrap.min.js"></script>-->
    <script src="../controllers/del.js"></script>
 </html>
