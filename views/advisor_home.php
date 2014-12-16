@@ -50,7 +50,7 @@ $student_advisor_id = $row['student_has_advisor_id'];
 
          <!-- Navigation -->
          <?php
-         include_once './nav_bar.php';
+         include 'nav_bar.php';
          ?>
 
          <div id="page-wrapper">
