@@ -57,7 +57,7 @@ function login_hod() {
 
 //                alert(r.result);
    if (r.result === 1) { // signifies manager
-      window.open("hod_home.php", "_self");
+      window.open("hod_view_reports.php", "_self");
    }
    else {
       alert("username or password wrong");

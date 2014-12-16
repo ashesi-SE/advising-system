@@ -43,11 +43,11 @@ if (isset($_SESSION['faculty_id'])) {
    <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav bs-docs-sidebar" id="sidebar">
          <li class="active">
-            <a href="hod_home.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <a href="hod_view_reports.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
          </li>
-         <li>
+<!--         <li>
             <a href="hod_home.php"><i class="fa fa-fw fa-wrench"></i> Advisors & Advisees</a>
-         </li>
+         </li>-->
          <li>
             <a href="hod_view_reports.php"><i class="fa fa-fw fa-edit"></i> View Reports</a>
          </li>

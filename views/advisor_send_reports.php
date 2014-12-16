@@ -1,8 +1,9 @@
 <?php
-$faculty_id = 0;
-
+session_start();
+$advisor_id = 0;
 if (isset($_SESSION['faculty_id'])) {
-   $faculty_id = $_SESSION['faculty_id'];
+   $advisor_id = $_SESSION['faculty_id'];
+   $advisor_name = $_SESSION['username'];
 }
 ?>
 <!DOCTYPE html>

@@ -27,7 +27,7 @@ class advisor_class extends adb {
    }
 
    function set_available_time($id, $date) {
-      $query = "Insert into advisor_free_times(dates_available,faculty_id) values ($date,$id)";
+      $query = "Insert into advisor_free_times(dates_available,faculty_id) values ('$date','$id')";
 //                            print $query;  
       return $this->query($query);
    }

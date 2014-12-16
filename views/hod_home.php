@@ -259,16 +259,7 @@
                </div>
 
 
-               <div class="row">
-                  <div class="col-lg-12">
-
-
-                     <div class="embed-responsive embed-responsive-4by3 col-sm-8 col-sm-offset-1">
-                        <iframe src="https://www.google.com/calendar/embed?height=450&amp;wkst=1&amp;bgcolor=%23cccccc&amp;src=bcj7o45ohqnvmdf5vd0esq94n4%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=Africa%2FAccra" style=" border-width:0 " width="600" height="400" frameborder="0" scrolling="no"></iframe>
-                     </div>
-
-                  </div>
-               </div>
+              
                <!--            </div>-->
                <!-- /.row -->
 

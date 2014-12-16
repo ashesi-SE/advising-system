@@ -79,70 +79,28 @@
                                  </thead>
                                  <tbody>
                                     <tr>
+
                                        <?php
-//                                       include_once '';
+                                       include_once '../models/student_has_advisor_class.php';
+                                       $prov_obj = new student_has_advisor_class();
+                                       if ($prov_obj->get_assigned_list()) {
+                                          $row = $prov_obj->fetch();
+
+                                          while ($row) {
+
+                                             print "<tr><td>" . $row["f_firstname"] . " " . $row["f_lastname"] . "</td>";
+                                             print"<td>" . $row["s_firstname"] . " " . $row["s_lastname"] . "</td></tr>";
+
+
+                                             $row = $prov_obj->fetch();
+                                          }
+                                       }
                                        ?>
 
 
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Martha Kumi
-                                          <!--</div>-->
-                                       </td>
                                     </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
 
 
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Margaret Kumi
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Ayorkor Korsah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Fiifi Baako
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Philip Black
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <?php
-//                                       include_once '';
-                                       ?>
-
-
-                                       <td>Esi Ansah</td>
-                                       <td>
-                                          <!--<div class='col-sm-6'>-->
-                                          Nii Apa 
-                                          <!--</div>-->
-                                       </td>
-                                    </tr>
                                  </tbody>
                               </table>
                            </div>

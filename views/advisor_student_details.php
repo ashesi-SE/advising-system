@@ -75,14 +75,14 @@ if ($row) {
                     </div>
                     <!-- /.row -->
 
-                    <div class="row">
+<!--                    <div class="row">
                         <div class="col-lg-12">
                             <div class="alert alert-info alert-dismissable">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- /.row -->
 
                     <div class="row">
@@ -260,9 +260,9 @@ if ($row) {
 
                 </div>
                 <!-- /.container-fluid -->
-
+<!--
                 <div class="row">
-                    <!--               <div class="col-lg-4">
+                                   <div class="col-lg-4">
                                       <div class="panel panel-default">
                                          <div class="panel-heading">
                                             <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Photo</h3>
@@ -273,8 +273,8 @@ if ($row) {
                                                <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
                                             </div>
                                          </div>
-                                      </div>-->
-                    <!--               </div>-->
+                                      </div>
+                                   </div>
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -295,39 +295,38 @@ if ($row) {
                             </div>
                         </div>
                     </div>
-                    <!-- /.row -->
+                     /.row 
 
-                </div>
+                </div>-->
 
                 <!--Courses-->
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Course List</h3>
                             </div>
                             <div class="panel-body">
-                                <ul>
+                                 <ul>
                                     <li>
                                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Current Courses <i class="fa fa-fw fa-caret-down"></i></a>
-                                        <ul id="demo1" class="collapse">
-                                            <li>
-                                                <a href="#"> Math</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> Phy</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> Chem</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> Bio</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> Geo</a>
-                                            </li>
-                                        </ul>
+                                       <ul id="demo1" class="collapse">
+                                <?php
+//                        
+                                 include_once '../models/student_class.php';
+                                 $adv_obj = new student_class();
+                                 if ($adv_obj->get_student_courses($student_id)) {
+                                    $row = $adv_obj->fetch();
+
+                                    while ($row) {
+
+                                       print "<li><a href='#''>" ."".$row["course_name"] . "</a></li>";
+                                       $row = $adv_obj->fetch();
+                                    }
+                                 }
+                                 ?>
+                              </ul>
                                     </li>
                                 </ul>
                                 <div class="list-group">
@@ -339,7 +338,7 @@ if ($row) {
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
+<!--                    <div class="col-lg-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Course List</h3>
@@ -374,7 +373,7 @@ if ($row) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- /.row -->
 

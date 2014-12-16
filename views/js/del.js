@@ -79,7 +79,7 @@ function assign_students() {
    advisors = syncAjax(u2);
 
    var u3 = "action_del.php?cmd=10&user=" + user + "&pass=" + pass;
-   prompt("url", u3);
+//   prompt("url", u3);
    syncAjax(u3);
 
    students.students;
@@ -95,6 +95,7 @@ function assign_students() {
 
    var temp = null;
 
+
 // advisors
    for (var i = 0; i < advisors.advisors.length; i++) {
       if (advisors.advisors[i].department_name === "Computer Science") {
@@ -109,6 +110,7 @@ function assign_students() {
 
 // students
    for (var i = 0; i < students.students.length; i++) {
+
       if (students.students[i].major === "Computer Science") {
          temp = new student_class(students.students[i].student_id, students.students[i].first_name, students.students[i].middle_name, students.students[i].last_name, students.students[i].username, students.students[i].major);
          csStudents.push(temp);
@@ -165,7 +167,7 @@ function assign_students() {
 
    for (var i = 0; i < b.length; i++) {
       for (var j = 0; j < b[i].length; j++) {
-
+//         debugger;
          // send to db with respective advisor
          var url = "action_del.php?cmd=1&advisor_id=" + baAdvisors[i].getId() + "&student_id=" + b[i][j].getId();
 //         prompt("url", url);

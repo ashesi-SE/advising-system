@@ -13,8 +13,8 @@ class student_has_advisor_class extends adb {
    function student_has_advisor_class() {
       adb::adb();
    }
-   
-   function delete(){
+
+   function delete() {
       $query2 = "delete from student_has_advisor";
 
       return $this->query($query2);
@@ -22,7 +22,7 @@ class student_has_advisor_class extends adb {
 
    function assign_student_to_advisor($student_id, $advisor_id) {
 
-      
+
 
       $query = "Insert into student_has_advisor(faculty_faculty_id, student_id) values($advisor_id,$student_id)";
 //                            print $query;  
@@ -63,19 +63,23 @@ class student_has_advisor_class extends adb {
 
       return $this->query($query);
    }
-   
-   function get_student_has_advisor_by_studet_id($id)
-   {
-       $query = "Select * from student_has_advisor where student_id =$id";
 
-      return $this->query($query);    
+   function get_student_has_advisor_by_studet_id($id) {
+      $query = "Select * from student_has_advisor where student_id =$id";
+
+      return $this->query($query);
    }
-   
-   function get_student_has_advisor_by_advisor_id($id)
-   {
-       $query = "Select * from student_has_advisor where faculty_faculty_id =$id";
 
-      return $this->query($query);    
+   function get_student_has_advisor_by_advisor_id($id) {
+      $query = "Select * from student_has_advisor where faculty_faculty_id =$id";
+
+      return $this->query($query);
+   }
+
+   function get_assigned_list() {
+      $query = "Select student.first_name AS s_firstname,student.last_name AS s_lastname,faculty.first_name AS f_firstname,faculty.last_name AS f_lastname from (student,faculty)  join student_has_advisor on student_has_advisor.student_id = student.student_id and student_has_advisor.faculty_faculty_id =faculty.faculty_id";
+
+      return $this->query($query);
    }
 
 //   function get_student_has_advisor_id_by_student_id($id)
