@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 06, 2014 at 09:18 PM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Host: localhost
+-- Generation Time: Dec 16, 2014 at 08:39 PM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `advisory_system`
+-- Database: `advisory-system`
 --
 
 -- --------------------------------------------------------
@@ -37,6 +37,31 @@ CREATE TABLE IF NOT EXISTS `advisor_free_times` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `advisor_upload`
+--
+
+CREATE TABLE IF NOT EXISTS `advisor_upload` (
+  `advisor_upload_id` int(11) NOT NULL AUTO_INCREMENT,
+  `faculty_id` int(11) NOT NULL,
+  `path` varchar(50) NOT NULL,
+  `date_created` datetime NOT NULL,
+  PRIMARY KEY (`advisor_upload_id`),
+  KEY `faculty_id` (`faculty_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `advisor_upload`
+--
+
+INSERT INTO `advisor_upload` (`advisor_upload_id`, `faculty_id`, `path`, `date_created`) VALUES
+(3, 0, 'male_silhouette2.jpg', '2014-12-14 20:09:55'),
+(4, 0, '20141201205932.ics', '2014-12-14 20:56:47'),
+(5, 2, 'Capstone_Project-_Capstone_Rubric-_Thesis.doc', '2014-12-14 21:51:44'),
+(6, 2, '20141201205932.ics', '2014-12-15 13:49:53');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `faculty`
 --
 
@@ -48,18 +73,21 @@ CREATE TABLE IF NOT EXISTS `faculty` (
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `department_name` varchar(45) DEFAULT NULL,
+  `role` varchar(10) NOT NULL,
+  `role2` varchar(30) NOT NULL,
   PRIMARY KEY (`faculty_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `faculty`
 --
 
-INSERT INTO `faculty` (`faculty_id`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `department_name`) VALUES
-(1, 'Doctor', 'Ayorkor', 'Korsah', 'd.k@ashesi.edu.gh', '123', 'Computer Science'),
-(2, 'Esi', 'Mansah', 'Ansah', 'esi.a@ashesi.edu.gh', '123', 'Business Administration'),
-(3, 'Ebow', 'Spi', 'Spio', 'e.s', '123', 'Business Administration'),
-(4, 'Dafla', 'A', 'Aelaf', 'd.a', '123', 'Computer Science');
+INSERT INTO `faculty` (`faculty_id`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `department_name`, `role`, `role2`) VALUES
+(1, 'Doctor', 'Ayorkor', 'Korsah', 'a.korsah', '123', 'Computer Science', 'faculty', 'hod'),
+(2, 'Esi', 'Mansah', 'Ansah', 'e.ansah', '123', 'Business Administration', 'faculty', ''),
+(3, 'Ebow', 'Spi', 'Spio', 'e.spio', '123', 'Business Administration', 'faculty', 'hod'),
+(4, 'Dafla', 'A', 'Aelaf', 'a.dafla', '123', 'Computer Science', 'faculty', ''),
+(5, 'Marcia', 'G', 'Grant', 'm.grant', '123', 'Pro', 'Provost', '');
 
 -- --------------------------------------------------------
 
@@ -71,9 +99,25 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `msg_id` int(11) NOT NULL AUTO_INCREMENT,
   `message` text,
   `student_has_advisor_id` int(11) NOT NULL,
+  `recepient` varchar(30) NOT NULL,
+  `date_created` datetime NOT NULL,
   PRIMARY KEY (`msg_id`),
   KEY `fk_messages_student_has_advisor1_idx` (`student_has_advisor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`msg_id`, `message`, `student_has_advisor_id`, `recepient`, `date_created`) VALUES
+(4, 'hellewww', 1, 'student', '2014-12-02 02:27:10'),
+(5, 'this is another message to my advisor', 1, 'advisor', '2014-12-02 03:04:45'),
+(6, 'this is a messgae to my student', 1, 'student', '2014-12-16 03:05:19'),
+(7, ' Yo yo yo. Hope you are good', 60, 'student', '2014-12-13 19:04:41'),
+(8, ' Can we meet on thursday this week', 60, 'advisor', '2014-12-13 19:06:26'),
+(9, ' No we cant meet this thursday', 60, 'student', '2014-12-13 19:08:15'),
+(10, ' Hello Ku, just a reminder to meet me tomorrow at 2pm in the Cafeteria. Bring along a copy of your transcript.', 0, 'student', '2014-12-14 20:47:15'),
+(11, ' Yes Dr. Ansah. Could I bring a soft copy of my transcript instead?', 67, 'advisor', '2014-12-14 20:50:29');
 
 -- --------------------------------------------------------
 
@@ -106,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `password` varchar(45) DEFAULT NULL,
   `major` varchar(30) NOT NULL,
   PRIMARY KEY (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `student`
@@ -149,20 +193,45 @@ CREATE TABLE IF NOT EXISTS `student_has_advisor` (
   PRIMARY KEY (`student_has_advisor_id`),
   KEY `fk_student_has_advisor_faculty1_idx` (`faculty_faculty_id`),
   KEY `fk_student_has_advisor_student1_idx` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
 
 --
 -- Dumping data for table `student_has_advisor`
 --
 
 INSERT INTO `student_has_advisor` (`student_has_advisor_id`, `faculty_faculty_id`, `student_id`) VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 1, 4),
-(5, 2, 5),
-(6, 2, 6),
-(7, 2, 7);
+(71, 1, 1),
+(72, 1, 3),
+(73, 4, 6),
+(74, 2, 2),
+(75, 2, 4),
+(76, 3, 5),
+(77, 3, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `upload`
+--
+
+CREATE TABLE IF NOT EXISTS `upload` (
+  `upload_id` int(11) NOT NULL AUTO_INCREMENT,
+  `faculty_id` int(11) NOT NULL,
+  `path` varchar(50) NOT NULL,
+  `date_created` datetime NOT NULL,
+  PRIMARY KEY (`upload_id`),
+  KEY `faculty_id` (`faculty_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `upload`
+--
+
+INSERT INTO `upload` (`upload_id`, `faculty_id`, `path`, `date_created`) VALUES
+(1, 3, '3rd_-_7th_november-2.xls', '2014-12-13 21:13:33'),
+(2, 1, 'advisory_system.sql', '2014-12-13 21:22:30'),
+(3, 1, 'AeroVector_Courses.pdf', '2014-12-14 20:18:43'),
+(4, 1, '20141201205932.ics', '2014-12-15 13:51:40');
 
 --
 -- Constraints for dumped tables
@@ -173,12 +242,6 @@ INSERT INTO `student_has_advisor` (`student_has_advisor_id`, `faculty_faculty_id
 --
 ALTER TABLE `advisor_free_times`
   ADD CONSTRAINT `fk_advisor_free_times_faculty` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `messages`
---
-ALTER TABLE `messages`
-  ADD CONSTRAINT `fk_messages_student_has_advisor1` FOREIGN KEY (`student_has_advisor_id`) REFERENCES `student_has_advisor` (`student_has_advisor_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `sessions`

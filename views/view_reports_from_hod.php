@@ -71,36 +71,32 @@
                               <table class="table table-bordered table-hover table-striped" id="dataTables-example">  
                                  <thead>
                                     <tr>
-                                       <th> Advisor</th>
-                                       <th> Student</th>
-                                       <!--<th> Select</th>-->
+                                       <th> Faculty</th>
+                                       <th> Report</th>
+                                       <th> Date Sent</th>
                                        <!--<th>Amount (USD)</th>-->
                                     </tr>
                                  </thead>
                                  <tbody>
                                     <tr>
-
                                        <?php
-                                       include_once '../models/student_has_advisor_class.php';
-                                       $prov_obj = new student_has_advisor_class();
-                                       if ($prov_obj->get_assigned_list()) {
-                                          $row = $prov_obj->fetch();
+                                       include_once '../models/uploader_class.php';
+                                       $getfiles_obj = new uploader_class();
+                                       if ($getfiles_obj->files()) {
+                                          $row = $getfiles_obj->fetch();
 
                                           while ($row) {
 
-                                             print "<tr><td>" . $row["f_firstname"] . " " . $row["f_lastname"] . "</td>";
-                                             print"<td>" . $row["s_firstname"] . " " . $row["s_lastname"] . "</td></tr>";
+                                             print("<tr><td>" . $row['first_name'] . " " . $row['last_name'] . "</td>");
+                                             print("<td><a href='../uploads/$row[path]'>" . $row['path'] . "</a></td>");
+                                             print("<td>" . $row['date_created'] . "</td></tr>");
 
-
-                                             $row = $prov_obj->fetch();
+                                             $row = $getfiles_obj->fetch();
                                           }
                                        }
                                        ?>
 
-
                                     </tr>
-
-
                                  </tbody>
                               </table>
                            </div>
@@ -290,7 +286,7 @@
    <script src="js/plugins/morris/morris-data.js"></script>-->
    <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 
-   <script src="js/student_class.js" type="text/javascript"></script>
+   <!--<script src="js/student_class.js" type="text/javascript"></script>-->
 
    <script src="js/del.js" type="text/javascript"></script>
 

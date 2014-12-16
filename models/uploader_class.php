@@ -7,25 +7,35 @@ include_once 'adb.php';
  *
  * @author maltiti
  */
-class student_has_advisor_class extends adb {
+class uploader_class extends adb {
 
    //put your code here
-   function student_has_advisor_class() {
+   function uploader_class() {
       adb::adb();
    }
 
-   function delete() {
-      $query2 = "delete from student_has_advisor";
+   function uploader($faculty_id, $path) {
+      $query2 = "insert into upload(faculty_id, path,date_created) values($faculty_id, '$path',now())";
 
+//      print $query2;
       return $this->query($query2);
    }
 
-   function assign_student_to_advisor($student_id, $advisor_id) {
+   function files() {
 
+      $query = "SELECT * 
+FROM upload
+LEFT JOIN faculty ON faculty.faculty_id = upload.faculty_id
+ORDER BY (
+date_created
+) DESC 
+LIMIT 0 , 30";
 
-
-      $query = "Insert into student_has_advisor(faculty_faculty_id, student_id) values($advisor_id,$student_id)";
-//                            print $query;  
+//      SELECT * 
+//FROM upload
+//LEFT JOIN faculty ON faculty.faculty_id = upload.faculty_id
+//ORDER BY  `upload`.`date_created` DESC
+//      print $query;
       return $this->query($query);
    }
 
@@ -72,12 +82,6 @@ class student_has_advisor_class extends adb {
 
    function get_student_has_advisor_by_advisor_id($id) {
       $query = "Select * from student_has_advisor where faculty_faculty_id =$id";
-
-      return $this->query($query);
-   }
-
-   function get_assigned_list() {
-      $query = "Select student.first_name AS s_firstname,student.last_name AS s_lastname,faculty.first_name AS f_firstname,faculty.last_name AS f_lastname from (student,faculty)  join student_has_advisor on student_has_advisor.student_id = student.student_id and student_has_advisor.faculty_faculty_id =faculty.faculty_id";
 
       return $this->query($query);
    }

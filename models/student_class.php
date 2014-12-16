@@ -43,14 +43,29 @@ class student_class extends adb {
       return $this->query($query);
    }
 
-   
+   function get_student_details_from_id($id) {
+      $query = "Select * from student where student_id = $id";
+      return $this->query($query);
+   }
+
+   function get_advisors_free_time($student_id) {
+      $query = "Select * from advisor_free_times left join student_has_advisor on student_has_advisor.faculty_faculty_id = advisor_free_times.faculty_id where student_id = $student_id";
+
+      return $this->query($query);
+   }
+
+   function get_student_courses($student_id) {
+      $query = "Select * from student_grades left join student on student_grades.student_id = student.student_id where student_grades.student_id = $student_id";
+
+      return $this->query($query);
+   }
+
 //   function get_student_has_advisor_id_by_student_id($id)
 //   {
 //       $query = "Select * from student_has_advisor where student_id =$id";
 ////       print $query;
 //       return $this->query($query);  
 //   }
-   
 }
 
 //$advisor_id = 1;

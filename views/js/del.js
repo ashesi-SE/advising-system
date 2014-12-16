@@ -42,6 +42,10 @@ $(document).ready(function () {
 //   }
 });
 
+function alerter() {
+   alert("saved");
+}
+
 //   source http://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
 function split(a, n) {
    var len = a.length, out = [], i = 0;
@@ -74,6 +78,10 @@ function assign_students() {
 //   prompt("url", u2);
    advisors = syncAjax(u2);
 
+   var u3 = "action_del.php?cmd=10&user=" + user + "&pass=" + pass;
+//   prompt("url", u3);
+   syncAjax(u3);
+
    students.students;
    advisors.advisors;
 
@@ -86,6 +94,7 @@ function assign_students() {
    var baStudents = new Array();
 
    var temp = null;
+
 
 // advisors
    for (var i = 0; i < advisors.advisors.length; i++) {
@@ -101,6 +110,7 @@ function assign_students() {
 
 // students
    for (var i = 0; i < students.students.length; i++) {
+
       if (students.students[i].major === "Computer Science") {
          temp = new student_class(students.students[i].student_id, students.students[i].first_name, students.students[i].middle_name, students.students[i].last_name, students.students[i].username, students.students[i].major);
          csStudents.push(temp);
@@ -124,13 +134,10 @@ function assign_students() {
    var assigningCs = new Array();
    var assigningBa = new Array();
 
-
    // number of students per advisor
    var num_stud_per_adv_cs = csStudents.length / csAdvisors.length;
 
    var a = split(csStudents, num_stud_per_adv_cs);
-
-
 
 //   debugger;
 //   alert(a);
@@ -146,41 +153,34 @@ function assign_students() {
          if (sent.result === 0) { // signifies manager
             alert(sent.message + " Tried: action_del.php?cmd=1&advisor_id=" + csAdvisors[i].getId() + "&student_id=" + a[i][j].getId());
          }
-//         else{
-//            alert(sent.message);
-//         }
       }
    }
-   alert("Assigned CS/MIS student successfully");
+//   alert("Assigned CS/MIS student successfully");
+
    // number of students per advisor ba
    var num_stud_per_adv_ba = baStudents.length / baAdvisors.length;
 
    var b = split(baStudents, num_stud_per_adv_ba);
-
-
 
 //   debugger;
 //   alert(a);
 
    for (var i = 0; i < b.length; i++) {
       for (var j = 0; j < b[i].length; j++) {
-
+//         debugger;
          // send to db with respective advisor
          var url = "action_del.php?cmd=1&advisor_id=" + baAdvisors[i].getId() + "&student_id=" + b[i][j].getId();
-         prompt("url", url);
+//         prompt("url", url);
          var sent = syncAjax(url);
 
          if (sent.result === 0) { // signifies manager
             alert(sent.message + " Tried: action_del.php?cmd=1&advisor_id=" + baAdvisors[i].getId() + "&student_id=" + a[i][j].getId());
          }
-//         else{
-//            alert(sent.message);
-//         }
       }
    }
 
-   alert("Assigned BA students successfully");
-
+//   alert("Assigned BA students successfully");
+   alert("Total students: " + ((csStudents.length + baStudents.length)) + " CS/MIS:" + csStudents.length + " BA: " + baStudents.length);
 
 
 

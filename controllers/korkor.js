@@ -13,7 +13,48 @@ function syncAjax(u) {
 
 }
 
-function saveDone(data) {
+function send_message_to_student(student_has_advisor_id)
+{
+//   alert ("this is the student has advisor id " + student_has_advisor_id);
+   var message = document.getElementById("message_student").value;
+   var u = "action_korkor.php?cmd=4&id="+student_has_advisor_id +"&message=" + message;
+   var r = syncAjax(u);      
+    
+    if(r.result === 1)
+    {
+        alert("Your messgae has been sent to your student");
+    }
+    
+    else if(r.result === 0 )
+    {
+        alert("not added");
+    }
+   
+}
+function showAllMessages()
+{
+    BootstrapDialog.alert('I want banana!');  
+}
+function send_meeting(id)
+{
+    var message = document.getElementById("message").value;
+//    alert("message to advisor");  
+    var u = "action_korkor.php?cmd=3&id="+id +"&message=" + message;
+//    prompt("u", u);
+    var r = syncAjax(u);      
+    
+    if(r.result === 1)
+    {
+        alert("Your messgae has been sent to your advisor");
+    }
+    
+    else if(r.result === 0 )
+    {
+        alert("not added");
+    }
+}
+
+function saveDone(data) {   
     alert(data);
 }
 
