@@ -1,0 +1,19 @@
+Field 1,@X Position,@Y Position,@Note Color,@Note ID,!Group
+"Students are indifferent of the gender of their advisors
+",100,120,Yellow,841ce96c-6968-429e-aaf0-81793389ea62,FACTOIDS
+"Students generally prefer instant messaging to sending emails
+",230,120,Pink,65e9877a-ff14-443a-bb73-25aa7e6c82a4,FACTOIDS
+"Some students will like to have at least 2 advisors 
+",30,250,Green,4ee3a653-aa14-442a-a0da-d84a0d1bcf6e,FACTOIDS
+"We need to get the focus schema so that students and advisors can see grades on our platform
+",290,250,Lavender,c9e8a033-6073-44e1-b73b-4865b670edd4,FACTOIDS
+We need to ask certain personal and academic questions in order to adequately assign them an advisor,160,250,Peach,58500109-7a5b-45a1-860e-41871c82a5c1,FACTOIDS
+We need to see Osafo Maafo for clafication on the schema that focus uses,690,150,Blue,91cab494-927c-4904-bd75-1273516dd330,Featurs and Design ideas
+Need to further interview Provost to better understand the role of the registrar in the advisory process,950,150,Peach,71dc32ce-85da-420f-8b8b-c66bb8551a73,Featurs and Design ideas
+Find out the role of the Heads of department in the Adivsory process,890,280,Lavender,4ba74551-d884-405c-bf84-2ce0c0f5af17,Featurs and Design ideas
+"Find out the kind of information that is put in the summary that is sent to the Head of Departments and later the Provost
+",940,410,Pink,12201fe9-1fa3-4491-9c13-dd7cd4e36e44,Featurs and Design ideas
+We might have to ask the provost about the possibilities of having more than one advisor,820,150,Yellow,1b3ecdba-fbba-451d-a734-7f464e2051cf,Featurs and Design ideas
+Add a chat and instant messaging feature,700,410,Peach,df3a88b3-af7f-444b-97bc-12a3e447d6de,Featurs and Design ideas
+We need to automate the assignment to students to theit advisors based on some facts we know about both roles,750,280,Blue,79118dd8-dc72-485a-ae2b-5b0b5a12dd6b,Featurs and Design ideas
+"Students dont like to feel obliged to see their advisors but rather would like to see them on their ""own accord""",160,380,Yellow,57fc11c5-d123-44d0-9378-fdd0d74987d3,FACTOIDS
